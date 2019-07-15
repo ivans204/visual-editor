@@ -1,5 +1,7 @@
-import './style.scss'
-import './editor.scss'
+import React from 'react';
+
+import './style.scss';
+import './editor.scss';
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
@@ -46,14 +48,14 @@ registerBlockType('visual-editor/kutak', {
             <Fragment>
 
                 <InspectorControls>
-                    <div>
-                        <PanelBody title={__('kutak-tip')}>
+                    <div className={className}>
+                        <PanelBody title={__('Tip kutka')}>
                             <SelectControl
                                 label={__('Izaberi tip kutka')}
                                 value={kutak}
                                 options={[
-                                    {label: 'promislite', value: 'promislite'},
-                                    {label: 'istrazite', value: 'istrazite'},
+                                    {label: 'Promislite', value: 'promislite'},
+                                    {label: 'Istrazite', value: 'istrazite'},
                                 ]}
                                 onChange={(kutak) => {
                                     setAttributes({kutak})
@@ -63,19 +65,18 @@ registerBlockType('visual-editor/kutak', {
                     </div>
                 </InspectorControls>
 
-                <div className='container'>
+                <div className='container start'>
                     <div className='row'>
                         <div className="col">
                             <div className={`is__widget kutak kutak-${kutak}`}>
-                                <p>
-                                    <RichText
-                                        tagName='span'
-                                        className='widget-inner-title'
-                                        value={kutakText}
-                                        onChange={onKutakTextChange}
-                                        placeholder={__('Kutak tekst')}
-                                    />
-                                </p>
+                                <p><span className='widget-inner-title'>{kutak}</span></p>
+                                <RichText
+                                    tagName='div'
+                                    className='kutak-content'
+                                    value={kutakText}
+                                    onChange={onKutakTextChange}
+                                    placeholder={__('Kutak tekst')}
+                                />
                             </div>
                         </div>
                     </div>
@@ -87,7 +88,7 @@ registerBlockType('visual-editor/kutak', {
     },
 
     save: function (props) {
-        const {attributes} = props;
+        const {className, attributes} = props;
 
         const {kutakText, kutak} = attributes;
 
@@ -97,22 +98,16 @@ registerBlockType('visual-editor/kutak', {
                 <div className='row'>
                     <div className="col">
                         <div className={`is__widget kutak kutak-${kutak}`}>
-                            <p>
-                                <RichText.Content
-                                    tagName='span'
-                                    className='widget-inner-title'
-                                    value={kutakText}
-                                />
-                            </p>
+                            <p><span className='widget-inner-title'>{kutak}</span></p>
+                            <RichText.Content
+                                tagName='div'
+                                className='kutak-content'
+                                value={kutakText}
+                            />
                         </div>
                     </div>
                 </div>
             </div>
-            // <RichText.Content
-            //     tagName='div'
-            //     className={`kutak-${kutak}`}
-            //     value={kutakText}
-            // />
         );
     }
 });

@@ -23,3 +23,87 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.is__widget {
+  position: relative; }
+
+.kutak {
+  min-height: 1rem;
+  margin: 30px 0 30px 0;
+  overflow: hidden; }
+  .kutak p {
+    margin: 0;
+    overflow: visible; }
+  .kutak .widget-inner-title {
+    text-transform: uppercase;
+    padding-right: 23px;
+    font-weight: 800;
+    letter-spacing: .8px;
+    text-align: left;
+    margin-left: 98px;
+    font-size: 1.75rem;
+    display: block;
+    margin-top: -63px; }
+  .kutak .kutak-content {
+    margin-top: 14px;
+    border-left: 4px solid transparent;
+    border-image-slice: 1 !important;
+    padding: 20px 40px !important;
+    padding: 0 40px;
+    padding-top: 30px;
+    display: block;
+    overflow: auto;
+    opacity: 1;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+
+.kutak.kutak-promislite .widget-inner-title {
+  color: #57c6c5; }
+
+.kutak.kutak-promislite .kutak-content {
+  -webkit-border-image: -webkit-linear-gradient(281deg, #84fab0, #71cfe5);
+       -o-border-image: -o-linear-gradient(281deg, #84fab0, #71cfe5);
+          border-image: linear-gradient(169deg, #84fab0, #71cfe5); }
+
+.kutak.kutak-istrazite .widget-inner-title {
+  color: #ec456c; }
+
+.kutak.kutak-istrazite .kutak-content {
+  -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
+  -webkit-border-image: -webkit-linear-gradient(bottom, #c8395a, #dc3f64);
+       -o-border-image: -o-linear-gradient(bottom, #c8395a, #dc3f64);
+          border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
+          border-image: linear-gradient(0deg, #c8395a, #dc3f64); }
+
+.kutak::before {
+  padding-right: 23px;
+  display: block;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: 40px;
+  height: 80px;
+  z-index: 1;
+  padding-top: 14px;
+  padding-left: 97px;
+  background-repeat: no-repeat;
+  background-size: 80px 81px; }
+
+.kutak-promislite::before {
+  content: '';
+  background-color: #f2fef7;
+  background-image: url(/wp-content/themes/kresimira/img/kutak_promislite.svg); }
+
+.kutak-istrazite::before {
+  content: '';
+  background-color: #faebee;
+  background-image: url(/wp-content/themes/kresimira/img/istrazite.svg); }
+
+.editor-styles-wrapper p {
+  margin-top: -1px !important;
+  margin-bottom: -1px !important; }
