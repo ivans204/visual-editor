@@ -9,6 +9,12 @@ const {
     InspectorControls,
 } = wp.blockEditor;
 
+const {
+    MenuGroup,
+    PanelBody,
+    SelectControl,
+} = wp.components;
+
 const {Fragment} = wp.element;
 
 registerBlockType('visual-editor/kutak', {
@@ -38,13 +44,43 @@ registerBlockType('visual-editor/kutak', {
 
         return (
             <Fragment>
-                <RichText
-                    tagName='div'
-                    className={`kutak-${kutak}`}
-                    value={kutakText}
-                    onChange={onKutakTextChange}
-                    placeholder={__('Kutak tekst')}
-                />
+
+                <InspectorControls>
+                    <div>
+                        <PanelBody title={__('kutak-tip')}>
+                            <SelectControl
+                                label={__('Izaberi tip kutka')}
+                                value={kutak}
+                                options={[
+                                    {label: 'promislite', value: 'promislite'},
+                                    {label: 'istrazite', value: 'istrazite'},
+                                ]}
+                                onChange={(kutak) => {
+                                    setAttributes({kutak})
+                                }}
+                            />
+                        </PanelBody>
+                    </div>
+                </InspectorControls>
+
+                <div className='container'>
+                    <div className='row'>
+                        <div className="col">
+                            <div className={`is__widget kutak kutak-${kutak}`}>
+                                <p>
+                                    <RichText
+                                        tagName='span'
+                                        className='widget-inner-title'
+                                        value={kutakText}
+                                        onChange={onKutakTextChange}
+                                        placeholder={__('Kutak tekst')}
+                                    />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </Fragment>
 
         );
@@ -56,11 +92,27 @@ registerBlockType('visual-editor/kutak', {
         const {kutakText, kutak} = attributes;
 
         return (
-            <RichText.Content
-                tagName='div'
-                className={`kutak-${kutak}`}
-                value={kutakText}
-            />
+
+            <div className='container'>
+                <div className='row'>
+                    <div className="col">
+                        <div className={`is__widget kutak kutak-${kutak}`}>
+                            <p>
+                                <RichText.Content
+                                    tagName='span'
+                                    className='widget-inner-title'
+                                    value={kutakText}
+                                />
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            // <RichText.Content
+            //     tagName='div'
+            //     className={`kutak-${kutak}`}
+            //     value={kutakText}
+            // />
         );
     }
 });
