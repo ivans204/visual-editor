@@ -11,3 +11,4 @@
 
 import './block/block.js';
 import './kutak/kutak.js';
+import './primjer/primjer.js';

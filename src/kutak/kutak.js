@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './style.scss';
-import './editor.scss';
+import './kutak-style.scss';
+import './kutak-editor.scss';
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
