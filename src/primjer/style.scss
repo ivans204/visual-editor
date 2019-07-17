@@ -13,7 +13,7 @@
     border-top: 4px solid #f01260;
     border-bottom: 4px solid #c24894;
     border-radius: 6px;
-    box-shadow: 0 0 39px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 39px 0 rgba(0, 0, 0, .1);
 
     .assignment-title {
       font-size: 1.75rem;
@@ -49,6 +49,10 @@
     .example-text {
       padding: 20px 30px 20px 30px;
       overflow: hidden;
+
+      .alignceter {
+        text-align: center;
+      }
     }
   }
 }

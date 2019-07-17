@@ -6,26 +6,14 @@ import './editor.scss';
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 
-const {withState} = wp.compose;
-
 const {
     RichText,
     RichTextToolbarButton,
-    InspectorControls,
-    AlignmentToolbar,
     BlockAlignmentToolbar,
-    BlockControls,
     InnerBlocks,
 } = wp.blockEditor;
 
 const {
-    MenuGroup,
-    PanelBody,
-    PanelRow,
-    SelectControl,
-    Toolbar,
-    Button,
-    Tooltip,
     FormToggle,
 } = wp.components;
 
@@ -35,6 +23,8 @@ const allowed_blocks = [
     'visual-editor/primjer-text',
     'visual-editor/primjer-solution',
     'core/image',
+    'core/video',
+    'visual-editor/primjer-text-center',
 ];
 
 registerBlockType('visual-editor/primjer', {

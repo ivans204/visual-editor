@@ -13,4 +13,5 @@ import './block/block.js';
 import './kutak/kutak.js';
 import './primjer/primjer.js';
 import './primjer/helpers/primjer-text.js';
+import './primjer/helpers/primjer-text-center.js';
 import './primjer/helpers/primjer-solution.js';
