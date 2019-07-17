@@ -31,6 +31,12 @@ const {
 
 const {Fragment} = wp.element;
 
+const allowed_blocks = [
+    'visual-editor/primjer-text',
+    'visual-editor/primjer-solution',
+    'core/image',
+];
+
 registerBlockType('visual-editor/primjer', {
     title: __('primjer'),
     icon: 'edit',
@@ -39,25 +45,11 @@ registerBlockType('visual-editor/primjer', {
         exampleTitle: {
             type: 'string',
         },
-        exampleText: {
-            type: 'string'
-        },
-        exampleSolution: {
-            type: 'string'
-        },
-        hasSolution: {
-            type: 'boolean',
-            default: true,
-        },
-        alignment: {
-            type: 'string',
-            default: 'none'
-        }
     },
 
     edit: function (props) {
         const {attributes, setAttributes} = props;
-        const {exampleTitle, exampleText, exampleSolution, hasSolution, alignment} = attributes;
+        const {exampleTitle} = attributes;
 
         function onExampleTitleChange(newTitle) {
             setAttributes({
@@ -65,70 +57,30 @@ registerBlockType('visual-editor/primjer', {
             })
         }
 
-        function onExampleTextChange(newText) {
-            setAttributes({
-                exampleText: newText
-            })
-        }
-
-        function onExampleSolutionChange(newText) {
-            setAttributes({
-                exampleSolution: newText
-            })
-        }
-
-        function onChangeAlignment(newAlignment) {
-            props.setAttributes({alignment: newAlignment === undefined ? 'none' : newAlignment});
-            console.log(newAlignment)
-        }
-
-        function solutionToggle() {
-            setAttributes({
-                hasSolution: !hasSolution
-            });
-        }
-
-        function showSolutionEdit() {
-            if (hasSolution) {
-                return (
-                    <div className='solution example-text'>
-                        <p><span className='rjesenje'>Rješenje:</span></p>
-                        <RichText
-                            tagName='p'
-                            value={exampleSolution}
-                            onChange={onExampleSolutionChange}
-                            placeholder={__('Tekst rjesenja')}
-                        />
-                    </div>
-                )
-            }
-        }
+        // function solutionToggle() {
+        //     setAttributes({
+        //         hasSolution: !hasSolution
+        //     });
+        // }
 
         return (
             <Fragment>
 
-                <InspectorControls>
-                    <PanelBody title={__('Rješenje', '2')}>
-                        <PanelRow>
-                            <label htmlFor="solution-toggle">
-                                {__('Ima rjesenje?')}
-                            </label>
-                            <FormToggle
-                                id={'solution-toggle'}
-                                label={__('Nema')}
-                                checked={hasSolution}
-                                onChange={solutionToggle}
-                            />
-                        </PanelRow>
-                    </PanelBody>
-                </InspectorControls>
-
-                <BlockControls>
-                    <AlignmentToolbar
-                        value={alignment}
-                        onChange={onChangeAlignment}
-                    />
-                </BlockControls>
+                {/*<InspectorControls>*/}
+                {/*    <PanelBody title={__('Rješenje', '2')}>*/}
+                {/*        <PanelRow>*/}
+                {/*            <label htmlFor="solution-toggle">*/}
+                {/*                {__('Ima rjesenje?')}*/}
+                {/*            </label>*/}
+                {/*            <FormToggle*/}
+                {/*                id={'solution-toggle'}*/}
+                {/*                label={__('Nema')}*/}
+                {/*                checked={hasSolution}*/}
+                {/*                onChange={solutionToggle}*/}
+                {/*            />*/}
+                {/*        </PanelRow>*/}
+                {/*    </PanelBody>*/}
+                {/*</InspectorControls>*/}
 
                 <div className='container'>
                     <div className='row'>
@@ -141,19 +93,11 @@ registerBlockType('visual-editor/primjer', {
                                     onChange={onExampleTitleChange}
                                     placeholder={__('Naslov primjera')}
                                 />
-                                <div className='example-text'>
-                                    <RichText
-                                        tagName='p'
-                                        value={exampleText}
-                                        onChange={onExampleTextChange}
-                                        placeholder={__('Tekst primjera')}
-                                    />
-                                </div>
 
-                                {
-                                    showSolutionEdit()
-                                }
-                                
+                                <InnerBlocks
+                                    allowedBlocks={allowed_blocks}
+                                />
+
                             </div>
                         </div>
                     </div>
@@ -166,21 +110,7 @@ registerBlockType('visual-editor/primjer', {
 
     save: function (props) {
         const {attributes} = props;
-        const {exampleTitle, exampleText, exampleSolution, hasSolution} = attributes;
-
-        function showSolutionSave() {
-            if (hasSolution) {
-                return (
-                    <div className="solution example-text">
-                        <p><span className="rjesenje">Rješenje:</span></p>
-                        <RichText.Content
-                            tagName='p'
-                            value={exampleSolution}
-                        />
-                    </div>
-                );
-            }
-        }
+        const {exampleTitle,} = attributes;
 
         return (
             <div className='container'>
@@ -192,15 +122,7 @@ registerBlockType('visual-editor/primjer', {
                                 className='assignment-title'
                                 value={exampleTitle}
                             />
-                            <div className='example-text'>
-                                <RichText.Content
-                                    tagName='p'
-                                    value={exampleText}
-                                />
-                            </div>
-                            {
-                                showSolutionSave()
-                            }
+                            <InnerBlocks.Content/>
                         </div>
                     </div>
                 </div>

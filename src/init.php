@@ -75,5 +75,19 @@ function visual_editor_cgb_block_assets() { // phpcs:ignore
 	);
 }
 
+function example_category ($categories, $post)
+{
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'examples',
+                'title' => __('Examples'),
+            ),
+        )
+    );
+}
+
 // Hook: Block assets.
 add_action( 'init', 'visual_editor_cgb_block_assets' );
+add_filter('block_categories', 'example_category', 10, 2);

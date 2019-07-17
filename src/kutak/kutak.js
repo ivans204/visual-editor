@@ -20,7 +20,7 @@ const {
 const {Fragment} = wp.element;
 
 registerBlockType('visual-editor/kutak', {
-    title: __('kutak for visual editor'),
+    title: __('kutak'),
     icon: 'welcome-learn-more',
     category: 'common',
     attributes: {
