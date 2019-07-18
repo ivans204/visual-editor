@@ -162,7 +162,8 @@
     z-index: 2;
     background-image: url(/wp-content/themes/kresimira/img/primjer_ikona.svg); }
   .example .example-text {
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px 10px 30px;
     overflow: hidden; }
-    .example .example-text .alignceter {
-      text-align: center; }
+  .example .align-center {
+    text-align: center;
+    padding-bottom: 10px; }

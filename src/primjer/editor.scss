@@ -46,11 +46,13 @@
   }
 
   .example-text {
-    padding: 20px 30px 20px 30px;
+    padding: 20px 30px 10px 30px;
     overflow: hidden;
 
-    .alignceter {
-      text-align: center;
-    }
+  }
+
+  .align-center {
+    text-align: center;
+    padding-bottom: 10px;
   }
 }

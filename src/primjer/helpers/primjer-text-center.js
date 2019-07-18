@@ -49,15 +49,13 @@ registerBlockType('visual-editor/primjer-text-center', {
 
 
         return (
-            <div className='example-text'>
-                <RichText
-                    className='alignceter'
-                    tagName='p'
-                    value={exampleText}
-                    onChange={onExampleTextChange}
-                    placeholder={__('Tekst primjera')}
-                />
-            </div>
+            <RichText
+                className='align-center'
+                tagName='p'
+                value={exampleText}
+                onChange={onExampleTextChange}
+                placeholder={__('Tekst primjera')}
+            />
         );
     },
 
@@ -66,13 +64,11 @@ registerBlockType('visual-editor/primjer-text-center', {
         const {exampleText} = attributes;
 
         return (
-            <div className='example-text aligncenter'>
-                <RichText.Content
-                    className='alignceter'
-                    tagName='p'
-                    value={exampleText}
-                />
-            </div>
+            <RichText.Content
+                className='align-center'
+                tagName='p'
+                value={exampleText}
+            />
         );
     }
 });
