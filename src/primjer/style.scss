@@ -52,8 +52,54 @@
       overflow: hidden;
     }
 
-      .align-center {
-        text-align: center;
-      }
+    .align-center {
+      text-align: center;
+    }
+  }
+
+  .zoom {
+
+    img {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    figure::after {
+      position: absolute;
+      content: " ";
+      //right: 0;
+      //top: 0;
+      background-color: #9d27b0;
+      width: 40px;
+      height: 40px;
+      background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
+      background-size: 30px;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+
+  .img-modal {
+    position: fixed;
+    display: none;
+    justify-items: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 999;
+
+    img {
+      max-width: 45%;
+      transform: scale(2);
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      background-color: #fff !important;
+      border: 10px solid #fff;
+    }
   }
 }

@@ -22,9 +22,10 @@ const {Fragment} = wp.element;
 const allowed_blocks = [
     'visual-editor/primjer-text',
     'visual-editor/primjer-solution',
-    'core/image',
-    'core/video',
+    // 'core/image',
+    // 'core/video',
     'visual-editor/primjer-text-center',
+    'visual-editor/example-image',
 ];
 
 registerBlockType('visual-editor/primjer', {

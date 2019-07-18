@@ -15,3 +15,4 @@ import './primjer/primjer.js';
 import './primjer/helpers/primjer-text.js';
 import './primjer/helpers/primjer-text-center.js';
 import './primjer/helpers/primjer-solution.js';
+import './primjer/helpers/__image.js';
