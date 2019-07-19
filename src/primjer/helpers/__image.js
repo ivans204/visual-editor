@@ -38,23 +38,26 @@ registerBlockType('visual-editor/example-image', {
         imageUrl: {
             type: 'string',
             default: '',
+        },
+        displayType: {
+            type: 'string',
+            default: 'none',
         }
     },
 
     edit: function (props) {
         const {attributes, setAttributes} = props;
-        const {modalIsOpen} = attributes;
+        const {modalIsOpen, displayType} = attributes;
 
         function getUrl(e) {
             if (e.target.hasAttribute('src')) {
                 attributes.imageUrl = e.target.getAttribute('src');
-                console.log(attributes.imageUrl);
             }
         }
 
         function openImgModal() {
             setAttributes({
-                modalIsOpen: !modalIsOpen,
+                modalIsOpen: true,
             });
         }
 
@@ -65,30 +68,33 @@ registerBlockType('visual-editor/example-image', {
                         allowedBlocks={['core/image']}
                     />
                 </div>
-
             </Fragment>
         );
     },
 
     save: function (props) {
         const {attributes, setAttributes} = props;
-        const {imageUrl, modalIsOpen} = attributes;
+        const {imageUrl, modalIsOpen, displayType} = attributes;
 
         function daj(e) {
-            if (e.target.hasAttribute('src')) {
-                console.log(13);
-            }
+            console.log(e.target.tagName)
         }
 
         return (
-            <Fragment>
-                <div className='example-image' >
-                    <img src={attributes.imageUrl} onClick={daj} alt=''/>
-                </div>
-                <div className='img-modal' style={(modalIsOpen) ? 'display: flex' : 'display: none'}>
-                    <img src={attributes.imageUrl} alt=''/>
-                </div>
-            </Fragment>
+            <div className='example-image' onClick={daj}>
+                <InnerBlocks.Content/>
+                {
+                    (!modalIsOpen ?
+                            <div id='img-modal' style='display: none'>
+                                <img src={attributes.imageUrl}/>
+                            </div>
+                            :
+                            <div id='img-modal' style='display: flex'>
+                                <img src={attributes.imageUrl}/>
+                            </div>
+                    )
+                }
+            </div>
         );
     }
 });

@@ -188,7 +188,7 @@
   background-repeat: no-repeat;
   cursor: pointer; }
 
-.entry .img-modal {
+.entry #img-modal {
   position: fixed;
   display: none;
   justify-items: center;
@@ -200,7 +200,7 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999; }
-  .entry .img-modal img {
+  .entry #img-modal img {
     max-width: 45%;
     -webkit-transform: scale(2);
         -ms-transform: scale(2);
