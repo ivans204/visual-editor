@@ -14,6 +14,8 @@ const {
     BlockAlignmentToolbar,
     BlockControls,
     InnerBlocks,
+    AlignmentToolbar,
+    RichTextToolbarButton,
 } = wp.blockEditor;
 
 const {
@@ -34,12 +36,15 @@ registerBlockType('visual-editor/primjer-text', {
         exampleText: {
             type: 'string'
         },
+        alignmentText: {
+            type: 'string',
+            default: 'none'
+        }
     },
 
     edit: function (props) {
         const {attributes, setAttributes} = props;
-        const {exampleText} = attributes;
-
+        const {exampleText, alignmentText} = attributes;
 
         function onExampleTextChange(newText) {
             setAttributes({
@@ -47,9 +52,37 @@ registerBlockType('visual-editor/primjer-text', {
             })
         }
 
+        function onTextAlignmentChange(newAlignment) {
+            props.setAttributes({
+                alignment: newAlignment === undefined ? 'none' : newAlignment
+            });
+        }
+
+        function setTextCenter() {
+            if (window.getSelection().baseNode.parentNode.nodeName !== 'DIV') {
+                document.execCommand(
+                    'insertHTML',
+                    false,
+                    `<div  style="text-align: center;"> ${window.getSelection()} </div>`
+                );
+                console.log(123)
+            }
+        }
 
         return (
             <Fragment>
+                <BlockControls>
+                    <AlignmentToolbar
+                        value={alignmentText}
+                        onChange={onTextAlignmentChange}
+                    />
+                    <RichTextToolbarButton
+                        icon='admin-tools'
+                        title='alignCenter'
+                        onClick={setTextCenter}
+                    />
+                </BlockControls>
+
                 <div className='example-text'>
                     <RichText
                         tagName='p'
@@ -59,7 +92,6 @@ registerBlockType('visual-editor/primjer-text', {
                     />
                 </div>
             </Fragment>
-
         );
     },
 

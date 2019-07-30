@@ -28,7 +28,7 @@ const {Fragment} = wp.element;
 
 registerBlockType('visual-editor/example-image', {
     title: __('example-image'),
-    icon: 'image',
+    icon: 'format-image',
     category: 'examples',
     attributes: {
         modalIsOpen: {

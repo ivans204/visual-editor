@@ -11,6 +11,7 @@ const {
     RichTextToolbarButton,
     BlockAlignmentToolbar,
     InnerBlocks,
+    BlockControls,
 } = wp.blockEditor;
 
 const {
@@ -22,8 +23,8 @@ const {Fragment} = wp.element;
 const allowed_blocks = [
     'visual-editor/primjer-text',
     'visual-editor/primjer-solution',
-    // 'core/image',
-    // 'core/video',
+    'core/image',
+    'core/video',
     'visual-editor/primjer-text-center',
     'visual-editor/example-image',
 ];
@@ -48,30 +49,12 @@ registerBlockType('visual-editor/primjer', {
             })
         }
 
-        // function solutionToggle() {
-        //     setAttributes({
-        //         hasSolution: !hasSolution
-        //     });
-        // }
-
         return (
             <Fragment>
 
-                {/*<InspectorControls>*/}
-                {/*    <PanelBody title={__('Rješenje', '2')}>*/}
-                {/*        <PanelRow>*/}
-                {/*            <label htmlFor="solution-toggle">*/}
-                {/*                {__('Ima rjesenje?')}*/}
-                {/*            </label>*/}
-                {/*            <FormToggle*/}
-                {/*                id={'solution-toggle'}*/}
-                {/*                label={__('Nema')}*/}
-                {/*                checked={hasSolution}*/}
-                {/*                onChange={solutionToggle}*/}
-                {/*            />*/}
-                {/*        </PanelRow>*/}
-                {/*    </PanelBody>*/}
-                {/*</InspectorControls>*/}
+                <BlockControls>
+
+                </BlockControls>
 
                 <div className='container'>
                     <div className='row'>
@@ -95,7 +78,6 @@ registerBlockType('visual-editor/primjer', {
                 </div>
 
             </Fragment>
-
         );
     },
 
