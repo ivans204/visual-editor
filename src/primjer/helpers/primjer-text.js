@@ -52,12 +52,6 @@ registerBlockType('visual-editor/primjer-text', {
             })
         }
 
-        function onTextAlignmentChange(newAlignment) {
-            props.setAttributes({
-                alignment: newAlignment === undefined ? 'none' : newAlignment
-            });
-        }
-
         function setTextCenter() {
             if (window.getSelection().baseNode.parentNode.nodeName !== 'DIV') {
                 document.execCommand(
@@ -65,17 +59,18 @@ registerBlockType('visual-editor/primjer-text', {
                     false,
                     `<div  style="text-align: center;"> ${window.getSelection()} </div>`
                 );
-                console.log(123)
+            } else {
+                document.execCommand(
+                    'insertHTML',
+                    false,
+                    `${window.getSelection()}`
+                )
             }
         }
 
         return (
             <Fragment>
                 <BlockControls>
-                    <AlignmentToolbar
-                        value={alignmentText}
-                        onChange={onTextAlignmentChange}
-                    />
                     <RichTextToolbarButton
                         icon='admin-tools'
                         title='alignCenter'
