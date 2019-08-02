@@ -53,18 +53,14 @@ registerBlockType('visual-editor/primjer-text', {
         }
 
         function setTextCenter() {
-            if (window.getSelection().baseNode.parentNode.nodeName !== 'DIV') {
+            if (window.getSelection().baseNode.parentNode.nodeName !== 'SPAN') {
                 document.execCommand(
                     'insertHTML',
                     false,
-                    `<div  style="text-align: center;"> ${window.getSelection()} </div>`
+                    `<span style="text-align: center; display: block;"> ${window.getSelection()} </span>`
                 );
-            } else {
-                document.execCommand(
-                    'insertHTML',
-                    false,
-                    `${window.getSelection()}`
-                )
+            } else if (window.getSelection().baseNode.parentNode.nodeName === 'SPAN') {
+                document.execCommand('formatBlock', false, '');
             }
         }
 
