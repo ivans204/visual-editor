@@ -71,7 +71,6 @@ registerBlockType('visual-editor/primjer', {
 						</div>
 					</div>
 				</div>
-
 			</Fragment>
 		);
 	},
