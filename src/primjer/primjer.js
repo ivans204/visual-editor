@@ -27,6 +27,7 @@ const allowed_blocks = [
 	'core/video',
 	'visual-editor/primjer-text-center',
 	'visual-editor/example-image',
+	'visual-editor/upload',
 ];
 
 registerBlockType('visual-editor/primjer', {

@@ -2,7 +2,9 @@ import React from 'react';
 
 import './style.scss';
 import './editor.scss';
+
 import CustomComponent from "../components/CustomComponent";
+import ImageUpload from "../components/upload";
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
@@ -23,6 +25,10 @@ registerBlockType('visual-editor/custom', {
 		},
 		buttonUrl: {
 			type: String,
+		},
+		imageUrl: {
+			type: 'String',
+			default: 'http://placehold.it/500'
 		}
 	},
 
@@ -39,12 +45,15 @@ registerBlockType('visual-editor/custom', {
 		return (
 			<Fragment>
 				<div>
-					<CustomComponent
-						url={buttonUrl}
-						text={buttonText}
-						onButtonTextChange={val => updateAttr('buttonText', val)}
-						onURLChange={val => updateAttr('buttonUrl', val)}
-					/>
+					{/*<CustomComponent*/}
+					{/*	url={buttonUrl}*/}
+					{/*	text={buttonText}*/}
+					{/*	onButtonTextChange={val => updateAttr('buttonText', val)}*/}
+					{/*	onURLChange={val => updateAttr('buttonUrl', val)}*/}
+					{/*/>*/}
+
+
+
 				</div>
 			</Fragment>
 		);
@@ -52,14 +61,17 @@ registerBlockType('visual-editor/custom', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {buttonText, buttonUrl} = attributes;
+		const {buttonText, buttonUrl, imageUrl} = attributes;
 
 		return (
 			<div>
-				<CustomComponent.View
-					text={buttonText}
-					url={buttonUrl}
-				/>
+				{/*<CustomComponent.View*/}
+				{/*	text={buttonText}*/}
+				{/*	url={buttonUrl}*/}
+				{/*/>*/}
+
+
+
 			</div>
 		);
 	}

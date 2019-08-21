@@ -12,4 +12,5 @@
 import './kutak/kutak.js';
 import './primjer/primjer.js';
 import './primjer/customBlock.js';
+import './primjer/imageUpload.js';
 import './primjer/helpers/primjer-text.js';
