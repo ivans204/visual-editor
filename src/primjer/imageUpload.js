@@ -9,11 +9,14 @@ const {registerBlockType} = wp.blocks;
 const {
 	RichText,
 	MediaUpload,
-	PlainText
+	InspectorControls,
 } = wp.blockEditor;
 
 const {
-	Button
+	Button,
+	PanelBody,
+	TextControl,
+	ButtonGroup,
 } = wp.components;
 
 const {Fragment} = wp.element;
@@ -26,22 +29,71 @@ registerBlockType('visual-editor/upload', {
 		imgUrl: {
 			type: 'string',
 			default: 'http://placehold.it/300'
+		},
+		imgWidth: {
+			value: null,
+			default: 300,
+		},
+		imgHeight: {
+			value: null,
+			default: 300,
+		},
+		imgAlignment: {
+			type: 'string',
+			value: 'alignCenter',
+			default: 'alignCenter',
 		}
 	},
 
 	edit: function (props) {
 		const {attributes, setAttributes, className} = props;
-		const {imgUrl} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment} = attributes;
 
 		function selectImage(value) {
-			// console.log(value);
 			setAttributes({
 				imgUrl: value.url,
 			})
 		}
 
+		function setImgWidth(newWidth) {
+			setAttributes({
+				imgWidth: newWidth,
+			})
+		}
+
+		function setImgHeight(newHeight) {
+			setAttributes({
+				imgHeight: newHeight,
+			})
+		}
+
 		return (
 			<Fragment>
+				<InspectorControls>
+					<PanelBody title={__('Slika')}>
+						<TextControl
+							label={__('Širina: ')}
+							type='number'
+							value={imgWidth}
+							onChange={setImgWidth}
+						/>
+						<TextControl
+							label={__('Visina: ')}
+							type='number'
+							value={imgHeight}
+							onChange={setImgHeight}
+						/>
+
+						<ButtonGroup id='img-label' label={__('Visina: ')}>
+							<Button isDefault>Left</Button>
+							<Button isDefault>
+								<span className="dashicons dashicons-align-center"/>
+							</Button>
+							<Button isDefault>Right</Button>
+						</ButtonGroup>
+					</PanelBody>
+				</InspectorControls>
+
 				<div>
 					<MediaUpload
 						onSelect={selectImage}
@@ -49,7 +101,9 @@ registerBlockType('visual-editor/upload', {
 							return <img
 								src={imgUrl}
 								onClick={open}
-								alt=''
+								width={imgWidth}
+								height={imgHeight}
+								className={imgAlignment}
 							/>;
 						}}
 					/>
@@ -60,11 +114,16 @@ registerBlockType('visual-editor/upload', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {imgUrl} = attributes;
+		const {imgUrl, imgWidth, imgHeight} = attributes;
 
 		return (
 			<div>
-				<img src={imgUrl} alt="" style='display:table; margin: 0 auto;'/>
+				<img
+					src={imgUrl}
+					width={imgWidth}
+					height={imgHeight}
+					style='display:table; margin: 0 auto;'
+				/>
 			</div>
 		);
 	}
