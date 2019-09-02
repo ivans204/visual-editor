@@ -145,6 +145,13 @@
   .example .example-text {
     padding: 20px 30px 10px 30px;
     overflow: hidden; }
-  .example .align-center {
-    text-align: center;
-    padding-bottom: 10px; }
+
+.img-align-center {
+  display: table;
+  margin: 0 auto; }
+
+.img-align-none {
+  display: table; }
+
+.img-align-right {
+  float: right; }

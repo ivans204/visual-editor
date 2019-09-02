@@ -192,3 +192,13 @@
     margin: 0 auto;
     background-color: #fff !important;
     border: 10px solid #fff; }
+
+.entry .img-align-center {
+  display: table;
+  margin: 0 auto; }
+
+.entry .img-align-none {
+  display: table; }
+
+.entry .img-align-right {
+  float: right; }

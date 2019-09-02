@@ -102,4 +102,16 @@
       border: 10px solid #fff;
     }
   }
+	.img-align-center {
+		display: table;
+		margin: 0 auto;
+	}
+
+	.img-align-none {
+		display: table;
+	}
+
+	.img-align-right {
+		float: right;
+	}
 }

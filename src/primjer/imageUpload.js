@@ -14,6 +14,7 @@ const {
 
 const {
 	Button,
+	IconButton,
 	PanelBody,
 	TextControl,
 	ButtonGroup,
@@ -40,8 +41,8 @@ registerBlockType('visual-editor/upload', {
 		},
 		imgAlignment: {
 			type: 'string',
-			value: 'alignCenter',
-			default: 'alignCenter',
+			value: 'img-align-none',
+			default: 'img-align-none',
 		}
 	},
 
@@ -67,10 +68,18 @@ registerBlockType('visual-editor/upload', {
 			})
 		}
 
+		function setImgAlign(newAlign) {
+			setAttributes({
+				// imgAlignment: newAlign,
+				imgAlignment: `img-align-${newAlign}`,
+			});
+		}
+
 		return (
 			<Fragment>
 				<InspectorControls>
 					<PanelBody title={__('Slika')}>
+
 						<TextControl
 							label={__('Širina: ')}
 							type='number'
@@ -84,13 +93,24 @@ registerBlockType('visual-editor/upload', {
 							onChange={setImgHeight}
 						/>
 
-						<ButtonGroup id='img-label' label={__('Visina: ')}>
-							<Button isDefault>Left</Button>
-							<Button isDefault>
-								<span className="dashicons dashicons-align-center"/>
-							</Button>
-							<Button isDefault>Right</Button>
+						<ButtonGroup id="aligns">
+							<IconButton
+								isDefault
+								icon="align-none"
+								onClick={() => setImgAlign('none')}
+							/>
+							<IconButton
+								isDefault
+								icon="align-center"
+								onClick={() => setImgAlign('center')}
+							/>
+							<IconButton
+								isDefault
+								icon="align-right"
+								onClick={() => setImgAlign('right')}
+							/>
 						</ButtonGroup>
+
 					</PanelBody>
 				</InspectorControls>
 
@@ -99,11 +119,12 @@ registerBlockType('visual-editor/upload', {
 						onSelect={selectImage}
 						render={({open}) => {
 							return <img
+								alt=""
 								src={imgUrl}
 								onClick={open}
 								width={imgWidth}
 								height={imgHeight}
-								className={imgAlignment}
+								className={`img-align-${imgAlignment}`}
 							/>;
 						}}
 					/>
@@ -114,7 +135,7 @@ registerBlockType('visual-editor/upload', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {imgUrl, imgWidth, imgHeight} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment} = attributes;
 
 		return (
 			<div>
@@ -122,7 +143,7 @@ registerBlockType('visual-editor/upload', {
 					src={imgUrl}
 					width={imgWidth}
 					height={imgHeight}
-					style='display:table; margin: 0 auto;'
+					className={`img-align-${imgAlignment}`}
 				/>
 			</div>
 		);
