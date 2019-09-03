@@ -1,107 +1,61 @@
 @import "../common";
 
 .entry {
+	.example {
+		overflow: visible;
+		background-size: contain;
+		background-color: #fff;
+		background-repeat: no-repeat;
+		background-position-y: 0;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		margin-bottom: 30px;
+		border-top: 4px solid #f01260;
+		border-bottom: 4px solid #c24894;
+		border-radius: 6px;
+		box-shadow: 0 0 39px 0 rgba(0, 0, 0, .1);
 
-  .example {
-    overflow: visible;
-    background-size: contain;
-    background-color: #fff;
-    background-repeat: no-repeat;
-    background-position-y: 0;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    border-top: 4px solid #f01260;
-    border-bottom: 4px solid #c24894;
-    border-radius: 6px;
-    box-shadow: 0 0 39px 0 rgba(0, 0, 0, .1);
+		.assignment-title {
+			font-size: 1.75rem;
+			font-weight: 800;
+			font-style: normal;
+			font-stretch: normal;
+			line-height: normal;
+			letter-spacing: normal;
+			text-align: left;
+			color: #e02473;
+			max-width: 512px;
+			width: 100%;
+			height: 92px;
+			display: flex;
+			align-items: center;
+			position: relative;
+			padding: 0 20px 0 100px;
+		}
 
-    .assignment-title {
-      font-size: 1.75rem;
-      font-weight: 800;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: normal;
-      text-align: left;
-      color: #e02473;
-      max-width: 512px;
-      width: 100%;
-      height: 92px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      padding: 0 20px 0 100px;
-    }
+		.assignment-title::before {
+			content: '';
+			margin-left: 10px;
+			width: 75px;
+			height: 75px;
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			background-image: url(/wp-content/themes/kresimira/img/primjer_ikona.svg);
+		}
 
-    .assignment-title::before {
-      content: '';
-      margin-left: 10px;
-      width: 75px;
-      height: 75px;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      background-image: url(/wp-content/themes/kresimira/img/primjer_ikona.svg);
-    }
+		.example-text {
+			padding: 20px 30px 10px 30px;
+			overflow: hidden;
+		}
 
-    .example-text {
-      padding: 20px 30px 10px 30px;
-      overflow: hidden;
-    }
+		.align-center {
+			text-align: center;
+		}
+	}
 
-    .align-center {
-      text-align: center;
-    }
-  }
-
-  .zoom {
-
-    img {
-      cursor: pointer;
-      user-select: none;
-    }
-
-    figure::after {
-      position: absolute;
-      content: " ";
-      //right: 0;
-      //top: 0;
-      background-color: #9d27b0;
-      width: 40px;
-      height: 40px;
-      background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
-      background-size: 30px;
-      background-position: center;
-      background-repeat: no-repeat;
-      cursor: pointer;
-    }
-  }
-
-  #img-modal {
-    position: fixed;
-    display: none;
-    justify-items: center;
-    align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, .8);
-    z-index: 999;
-
-    img {
-      max-width: 45%;
-      transform: scale(2);
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      background-color: #fff !important;
-      border: 10px solid #fff;
-    }
-  }
 	.img-align-center {
 		display: table;
 		margin: 0 auto;
@@ -113,5 +67,47 @@
 
 	.img-align-right {
 		float: right;
+	}
+
+	.show-zoom {
+		position: relative;
+		display: block;
+		cursor: pointer;
+	}
+
+	.show-zoom:after {
+		position: absolute;
+		content: " ";
+		right: 0;
+		top: 0;
+		background-color: #9d27b0;
+		width: 40px;
+		height: 40px;
+		background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
+		background-size: 30px;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+
+	.solution {
+		padding: 20px 30px 20px 30px;
+		overflow: hidden;
+	}
+
+	.img-modal {
+		position: fixed;
+		display: none;
+		justify-items: center;
+		align-items: center;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .8);
+		z-index: 999;
+	}
+
+	.img-modal-show {
+		display: flex !important;
 	}
 }

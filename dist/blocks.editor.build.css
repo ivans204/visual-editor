@@ -154,4 +154,27 @@
   display: table; }
 
 .img-align-right {
-  float: right; }
+  float: right;
+  display: inline-block; }
+
+.show-zoom {
+  position: relative;
+  display: block;
+  cursor: pointer; }
+
+.show-zoom:after {
+  position: absolute;
+  content: " ";
+  right: 0;
+  top: 0;
+  background-color: #9d27b0;
+  width: 40px;
+  height: 40px;
+  background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.solution {
+  padding: 20px 30px 20px 30px;
+  overflow: hidden; }

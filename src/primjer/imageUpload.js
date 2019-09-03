@@ -18,9 +18,12 @@ const {
 	PanelBody,
 	TextControl,
 	ButtonGroup,
+	CheckboxControl
 } = wp.components;
 
 const {Fragment} = wp.element;
+
+let test = false;
 
 registerBlockType('visual-editor/upload', {
 	title: __('upload image'),
@@ -43,12 +46,27 @@ registerBlockType('visual-editor/upload', {
 			type: 'string',
 			value: 'img-align-none',
 			default: 'img-align-none',
+		},
+		imgZoomCheck: {
+			type: 'boolean',
+			value: false,
+			default: false,
+		},
+		showZoom: {
+			type: 'string',
+			value: null,
+			default: null,
+		},
+		showModal: {
+			type: 'boolean',
+			value: false,
+			default: false,
 		}
 	},
 
 	edit: function (props) {
 		const {attributes, setAttributes, className} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlignment} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment, imgZoomCheck, showZoom, showModal} = attributes;
 
 		function selectImage(value) {
 			setAttributes({
@@ -70,9 +88,24 @@ registerBlockType('visual-editor/upload', {
 
 		function setImgAlign(newAlign) {
 			setAttributes({
-				// imgAlignment: newAlign,
 				imgAlignment: `img-align-${newAlign}`,
 			});
+		}
+
+		function onImgCheckChange(newVal) {
+			setAttributes({
+				imgZoomCheck: newVal,
+			});
+
+			if (!imgZoomCheck) {
+				setAttributes({
+					showZoom: 'show-zoom'
+				});
+			} else {
+				setAttributes({
+					showZoom: null
+				});
+			}
 		}
 
 		return (
@@ -111,6 +144,12 @@ registerBlockType('visual-editor/upload', {
 							/>
 						</ButtonGroup>
 
+						<CheckboxControl
+							label={__('Ima zoom?')}
+							checked={imgZoomCheck}
+							onChange={onImgCheckChange}
+						/>
+
 					</PanelBody>
 				</InspectorControls>
 
@@ -118,14 +157,18 @@ registerBlockType('visual-editor/upload', {
 					<MediaUpload
 						onSelect={selectImage}
 						render={({open}) => {
-							return <img
-								alt=""
-								src={imgUrl}
-								onClick={open}
-								width={imgWidth}
-								height={imgHeight}
-								className={`img-align-${imgAlignment}`}
-							/>;
+							return <div className="solution">
+								<a className={`example-text ${showZoom}`}>
+									<img
+										alt=""
+										src={imgUrl}
+										onClick={open}
+										width={imgWidth}
+										height={imgHeight}
+										className={`${imgAlignment}`}
+									/>
+								</a>
+							</div>;
 						}}
 					/>
 				</div>
@@ -134,18 +177,34 @@ registerBlockType('visual-editor/upload', {
 	},
 
 	save: function (props) {
-		const {attributes} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlignment} = attributes;
+		const {attributes, setAttributes} = props;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment, showZoom, showModal} = attributes;
 
 		return (
-			<div>
-				<img
-					src={imgUrl}
-					width={imgWidth}
-					height={imgHeight}
-					className={`img-align-${imgAlignment}`}
-				/>
-			</div>
+			<Fragment>
+				<div className="solution">
+					<a id="modal" className={`example-text ${showZoom}`}>
+						<img
+							alt=""
+							src={imgUrl}
+							width={imgWidth}
+							height={imgHeight}
+							className={imgAlignment}
+						/>
+					</a>
+				</div>
+
+				<div className="img-modal">
+					<img
+						alt=""
+						src={imgUrl}
+						width={imgWidth}
+						height={imgHeight}
+						className={imgAlignment}
+					/>
+				</div>
+
+			</Fragment>
 		);
 	}
 });
