@@ -94,7 +94,7 @@
 		overflow: hidden;
 	}
 
-	.img-modal {
+	#img-modal {
 		position: fixed;
 		display: none;
 		justify-items: center;
@@ -105,9 +105,5 @@
 		bottom: 0;
 		background-color: rgba(0, 0, 0, .8);
 		z-index: 999;
-	}
-
-	.img-modal-show {
-		display: flex !important;
 	}
 }

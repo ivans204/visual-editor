@@ -194,7 +194,7 @@ registerBlockType('visual-editor/upload', {
 					</a>
 				</div>
 
-				<div className="img-modal">
+				<div id="img-modal" style="display: none">
 					<img
 						alt=""
 						src={imgUrl}

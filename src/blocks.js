@@ -14,3 +14,4 @@ import './primjer/primjer.js';
 import './primjer/customBlock.js';
 import './primjer/imageUpload.js';
 import './primjer/helpers/primjer-text.js';
+import './zadatak/zadatak'

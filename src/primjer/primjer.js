@@ -47,7 +47,7 @@ registerBlockType('visual-editor/primjer', {
 		function onExampleTitleChange(newTitle) {
 			setAttributes({
 				exampleTitle: newTitle,
-			})
+			});
 		}
 
 		return (

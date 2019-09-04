@@ -85,6 +85,10 @@ function example_category($categories, $post)
                 'slug' => 'examples',
                 'title' => __('Examples'),
             ),
+			array(
+				'slug' => 'zadatak',
+				'title' => __('Zadatak'),
+			)
         )
     );
 }

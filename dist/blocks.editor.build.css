@@ -178,3 +178,104 @@
 .solution {
   padding: 20px 30px 20px 30px;
   overflow: hidden; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.answer-holder h2 {
+  position: relative;
+  font-weight: 800 !important;
+  color: #555 !important;
+  margin: 0 0 30px 0 !important;
+  padding-top: 0 !important;
+  z-index: 0;
+  font-size: 2.1rem; }
+
+.answer-holder h2:after {
+  content: " ";
+  background-image: url(/wp-content/themes/kresimira/img/zadatak-svg.svg);
+  position: absolute;
+  width: 228px;
+  height: 43px;
+  top: 24px;
+  left: -14px;
+  z-index: -1; }
+
+.answer-holder .wrapper-answer-input {
+  width: 250px;
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  position: relative; }
+  .answer-holder .wrapper-answer-input .answer-input {
+    width: 100%;
+    height: 46px;
+    border-radius: 3px;
+    padding: 0 20px;
+    background-color: #ececec;
+    border: 2px solid #ececec; }
+
+.answer-holder .a-btn {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 46px;
+  min-width: 46px;
+  border: none;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 4px;
+  -webkit-transition: all .2s linear;
+  -o-transition: all .2s linear;
+  transition: all .2s linear;
+  cursor: pointer; }
+
+.answer-holder .a-btn:hover {
+  margin-top: 5px;
+  margin-bottom: -5px; }
+
+.answer-holder .answer-check {
+  border-radius: 3px;
+  height: 46px;
+  padding: 0 20px;
+  border: none;
+  background-color: #69b11b;
+  -webkit-box-shadow: 0 16px 29px 0 rgba(105, 177, 27, 0.49);
+          box-shadow: 0 16px 29px 0 rgba(105, 177, 27, 0.49);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: #fff;
+  text-transform: uppercase;
+  width: 170px; }
+
+.answer-holder .answer-hint {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  background-color: #fcca17;
+  -webkit-box-shadow: 0 16px 29px 0 rgba(252, 202, 23, 0.55);
+          box-shadow: 0 16px 29px 0 rgba(252, 202, 23, 0.55); }
+
+.answer-holder .answer-solution {
+  background-color: #6a3fbe;
+  -webkit-box-shadow: 0 16px 29px 0 rgba(106, 63, 190, 0.49);
+          box-shadow: 0 16px 29px 0 rgba(106, 63, 190, 0.49); }
+
+.answer-holder .answer-reset {
+  background-color: #2395ee;
+  -webkit-box-shadow: 0 16px 29px 0 rgba(35, 149, 238, 0.49);
+          box-shadow: 0 16px 29px 0 rgba(35, 149, 238, 0.49); }
+
+.answer-holder .assignment-container-options {
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 15px; }
+  .answer-holder .assignment-container-options button {
+    margin-right: 15px; }
