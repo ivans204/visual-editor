@@ -27,8 +27,8 @@ let test = false;
 
 registerBlockType('visual-editor/upload', {
 	title: __('upload image'),
-	icon: 'edit',
-	category: 'common',
+	icon: 'format-image',
+	category: 'primjer',
 	attributes: {
 		imgUrl: {
 			type: 'string',

@@ -31,7 +31,7 @@ const {Fragment} = wp.element;
 registerBlockType('visual-editor/primjer-text', {
     title: __('primjer-text'),
     icon: 'media-text',
-    category: 'examples',
+    category: 'primjer',
     attributes: {
         exampleText: {
             type: 'string'

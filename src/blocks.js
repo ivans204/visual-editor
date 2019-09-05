@@ -13,5 +13,9 @@ import './kutak/kutak.js';
 import './primjer/primjer.js';
 import './primjer/customBlock.js';
 import './primjer/imageUpload.js';
-import './primjer/helpers/primjer-text.js';
-import './zadatak/zadatak'
+import './primjer/components/primjer-text.js';
+import './zadatak/zadatak';
+import './zadatak/zadatakOld';
+import './zadatak/components/singleInput';
+import './zadatak/components/zadatakText';
+import './zadatak/components/buttons';

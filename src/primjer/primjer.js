@@ -33,7 +33,7 @@ const allowed_blocks = [
 registerBlockType('visual-editor/primjer', {
 	title: __('primjer'),
 	icon: 'edit',
-	category: 'common',
+	category: 'primjer',
 	attributes: {
 		exampleTitle: {
 			type: 'string',
