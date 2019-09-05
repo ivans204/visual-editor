@@ -28,7 +28,7 @@ registerBlockType('visual-editor/custom', {
 		},
 		imageUrl: {
 			type: 'String',
-			default: 'http://placehold.it/500'
+			default: 'http://placehold.it/300'
 		}
 	},
 
@@ -45,15 +45,12 @@ registerBlockType('visual-editor/custom', {
 		return (
 			<Fragment>
 				<div>
-					{/*<CustomComponent*/}
-					{/*	url={buttonUrl}*/}
-					{/*	text={buttonText}*/}
-					{/*	onButtonTextChange={val => updateAttr('buttonText', val)}*/}
-					{/*	onURLChange={val => updateAttr('buttonUrl', val)}*/}
-					{/*/>*/}
-
-
-
+					<CustomComponent
+						url={buttonUrl}
+						text={buttonText}
+						onButtonTextChange={val => updateAttr('buttonText', val)}
+						onURLChange={val => updateAttr('buttonUrl', val)}
+					/>
 				</div>
 			</Fragment>
 		);
@@ -65,13 +62,10 @@ registerBlockType('visual-editor/custom', {
 
 		return (
 			<div>
-				{/*<CustomComponent.View*/}
-				{/*	text={buttonText}*/}
-				{/*	url={buttonUrl}*/}
-				{/*/>*/}
-
-
-
+				<CustomComponent.View
+					text={buttonText}
+					url={buttonUrl}
+				/>
 			</div>
 		);
 	}

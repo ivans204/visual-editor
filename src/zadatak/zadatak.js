@@ -14,6 +14,7 @@ const {
 
 const {
 	TextControl,
+	TextareaControl,
 	Panel,
 	PanelBody,
 	PanelRow,
@@ -38,10 +39,12 @@ registerBlockType('visual-editor/zadatak', {
 			type: 'string',
 		},
 		zadatakAnswer: {
-			type: 'string'
+			type: 'string',
+			value: null
 		},
 		zadatakHint: {
-			type: 'string'
+			type: 'string',
+			value: null,
 		},
 	},
 
@@ -58,18 +61,12 @@ registerBlockType('visual-editor/zadatak', {
 		function onZadatakTextChange(newText) {
 			setAttributes({
 				zadatakText: newText,
-			})
+			});
 		}
 
 		function randomString() {
 			return Math.random().toString(36).substring(2, 7);
 		}
-
-		// function onZadatakAnswerChange(newAnsw) {
-		// 	setAttributes({
-		// 		zadatakAnswer: newAnsw.target.value,
-		// 	});
-		// }
 
 		function setZadatakAnswer(newAnsw) {
 			setAttributes({
@@ -81,6 +78,26 @@ registerBlockType('visual-editor/zadatak', {
 			setAttributes({
 				zadatakHint: newAnsw,
 			})
+		}
+
+		function showAnswer() {
+			if (zadatakAnswer && zadatakAnswer.length) {
+				return (
+					<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
+						<img src="/wp-content/themes/kresimira/img/naocale.svg" alt=""/>
+					</Button>
+				)
+			}
+		}
+
+		function showHint() {
+			if (zadatakHint && zadatakHint.length) {
+				return (
+					<Button title="Pomoć" className={`a-btn answer-hint`}>
+						<img src="/wp-content/themes/kresimira/img/idea.svg" alt=""/>
+					</Button>
+				)
+			}
 		}
 
 		return (
@@ -103,7 +120,7 @@ registerBlockType('visual-editor/zadatak', {
 						</PanelRow>
 
 						<PanelRow>
-							<TextControl
+							<TextareaControl
 								label={__('Pomoć: ')}
 								type='text'
 								value={zadatakHint}
@@ -111,7 +128,6 @@ registerBlockType('visual-editor/zadatak', {
 							/>
 						</PanelRow>
 					</PanelBody>
-
 				</InspectorControls>
 
 				<div id={randomString()} className={`answer-holder assignment-container`}>
@@ -139,13 +155,8 @@ registerBlockType('visual-editor/zadatak', {
 						<Button className='answer-check a-btn'>Provjeri</Button>
 						<div className='assignment-container-options'>
 
-							<Button title="Pomoć" className={`a-btn answer-hint`}>
-								<img src="/wp-content/themes/kresimira/img/idea.svg" alt=""/>
-							</Button>
-
-							<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
-								<img src="/wp-content/themes/kresimira/img/naocale.svg" alt=""/>
-							</Button>
+							{showHint()}
+							{showAnswer()}
 
 							<Button title={__('Ponovi zadatak')} className={`a-btn answer-reset`}>
 								<img src="/wp-content/themes/kresimira/img/refresh.svg" alt=""/>
@@ -153,15 +164,35 @@ registerBlockType('visual-editor/zadatak', {
 
 						</div>
 					</div>
-
 				</div>
+
 			</Fragment>
 		);
 	},
 
 	save: function (props) {
 		const {attributes} = props;
-		const {zadatakTitle, zadatakText, zadatakAnswer} = attributes;
+		const {zadatakTitle, zadatakText, zadatakAnswer, zadatakHint} = attributes;
+
+		function ButtonAnswer() {
+			if (zadatakAnswer) {
+				return (
+					<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
+						<img src="/wp-content/themes/kresimira/img/naocale.svg" alt=""/>
+					</Button>
+				)
+			}
+		}
+
+		function ButtonHint() {
+			if (zadatakHint) {
+				return (
+					<Button title={__('Pomoć')} className={`a-btn answer-hint`}>
+						<img src="/wp-content/themes/kresimira/img/idea.svg" alt=""/>
+					</Button>
+				)
+			}
+		}
 
 		return (
 			<div className={`answer-holder assignment-container`}>
@@ -176,31 +207,25 @@ registerBlockType('visual-editor/zadatak', {
 					value={zadatakText}
 				/>
 				<span className='wrapper-answer-input'>
-		<input
-			type="text"
-			className={`answer-input`}
-			placeholder={__('Odgovor')}
-			data-answer={zadatakAnswer}
-		/>
-		</span>
-
+					<input
+						type="text"
+						className={`answer-input`}
+						placeholder={__('Odgovor')}
+						data-answer={zadatakAnswer}
+					/>
+				</span>
 				<div className='button-holder'>
 					<Button className='answer-check a-btn'>Provjeri</Button>
 					<div className='assignment-container-options'>
-						<Button className={`a-btn answer-hint`}>
-							<img src="/wp-content/themes/kresimira/img/idea.svg" alt=""/>
-						</Button>
-						
-						<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
-							<img src="/wp-content/themes/kresimira/img/naocale.svg" alt=""/>
-						</Button>
+
+						<ButtonAnswer/>
+						<ButtonHint/>
 
 						<Button title={__('Ponovi zadatak')} className={`a-btn answer-reset`}>
 							<img src="/wp-content/themes/kresimira/img/refresh.svg" alt=""/>
 						</Button>
 					</div>
 				</div>
-
 			</div>
 		);
 	}
