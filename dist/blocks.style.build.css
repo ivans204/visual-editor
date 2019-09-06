@@ -319,3 +319,25 @@
   margin-left: 15px; }
   .assignment-container .assignment-container-options button {
     margin-right: 15px; }
+
+.assignment-container .solution, .assignment-container .hint {
+  background-color: #fff;
+  -webkit-box-shadow: 0 21px 40px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 21px 40px 0 rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  width: 100%;
+  max-width: 380px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -240px;
+  margin-left: -240px;
+  height: 320px;
+  z-index: 554;
+  overflow-y: auto; }
+  .assignment-container .solution .solution-title, .assignment-container .solution .hint-title, .assignment-container .hint .solution-title, .assignment-container .hint .hint-title {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    margin-bottom: 20px; }

@@ -126,9 +126,21 @@ registerBlockType('visual-editor/zadatak-buttons', {
 		function ButtonAnswer() {
 			if (zadatakAnswer) {
 				return (
-					<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
-						<img src="/wp-content/themes/kresimira/img/naocale.svg" alt=""/>
-					</Button>
+					<Fragment>
+						<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
+							<img src="/wp-content/themes/kresimira/img/naocale.svg" alt=""/>
+						</Button>
+
+						<div className={`solution`} style={`display: none`}>
+							<div className={`solution-title`}>
+								<img src="/wp-content/themes/kresimira/img/naocale_p.svg" alt=""/>
+								Rješenje
+								<img className={`close-solution`} src="/wp-content/themes/kresimira/img/close-icon.svg"
+									 alt=""/>
+							</div>
+							{zadatakAnswer}
+						</div>
+					</Fragment>
 				)
 			}
 		}
@@ -136,9 +148,20 @@ registerBlockType('visual-editor/zadatak-buttons', {
 		function ButtonHint() {
 			if (zadatakHint) {
 				return (
-					<Button title={__('Pomoć')} className={`a-btn answer-hint`}>
-						<img src="/wp-content/themes/kresimira/img/idea.svg" alt=""/>
-					</Button>
+					<Fragment>
+						<Button title={__('Pomoć')} className={`a-btn answer-hint`}>
+							<img src="/wp-content/themes/kresimira/img/idea.svg" alt=""/>
+						</Button>
+						<div className={`hint`} style={`display: none`}>
+							<div className={`hint-title`}>
+								<img src="/wp-content/themes/kresimira/img/hint-inverse.svg" alt=""/>
+								Pomoć
+								<img className={`close-hint`} src="/wp-content/themes/kresimira/img/close-icon.svg"
+									 alt=""/>
+							</div>
+							{zadatakHint}
+						</div>
+					</Fragment>
 				)
 			}
 		}
