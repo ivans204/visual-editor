@@ -17,6 +17,7 @@ const {Fragment} = wp.element;
 
 const allowed_blocks = [
 	'visual-editor/single-input',
+	'visual-editor/fraction-input',
 	'visual-editor/zadatak-text',
 	'visual-editor/zadatak-buttons',
 ];
