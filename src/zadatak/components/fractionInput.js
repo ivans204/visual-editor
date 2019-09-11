@@ -19,11 +19,15 @@ const {
 const {Fragment} = wp.element;
 
 registerBlockType('visual-editor/fraction-input', {
-	title: __('fraction-input'),
+	title: __('Razlomak'),
 	icon: 'editor-spellcheck',
 	category: 'zadatak',
 	attributes: {
-		zadatakAnswer: {
+		zadatakAnswerTop: {
+			type: 'string',
+			value: null,
+		},
+		zadatakAnswerBot: {
 			type: 'string',
 			value: null,
 		}
@@ -31,11 +35,17 @@ registerBlockType('visual-editor/fraction-input', {
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {zadatakAnswer} = attributes;
+		const {zadatakAnswerTop, zadatakAnswerBot} = attributes;
 
-		function setZadatakAnswer(value) {
+		function setZadatakAnswerTop(value) {
 			setAttributes({
-				zadatakAnswer: value,
+				zadatakAnswerTop: value,
+			})
+		}
+
+		function setZadatakAnswerBot(value) {
+			setAttributes({
+				zadatakAnswerBot: value,
 			})
 		}
 
@@ -50,10 +60,18 @@ registerBlockType('visual-editor/fraction-input', {
 					>
 						<PanelRow>
 							<TextControl
-								label={__('Odgovor: ')}
+								label={__('Brojnik: ')}
 								type='text'
-								value={zadatakAnswer}
-								onChange={setZadatakAnswer}
+								value={zadatakAnswerTop}
+								onChange={setZadatakAnswerTop}
+							/>
+						</PanelRow>
+						<PanelRow>
+							<TextControl
+								label={__('Nazivnik: ')}
+								type='text'
+								value={zadatakAnswerBot}
+								onChange={setZadatakAnswerBot}
 							/>
 						</PanelRow>
 					</PanelBody>
@@ -63,8 +81,21 @@ registerBlockType('visual-editor/fraction-input', {
 					<ul>
 						<li>
 						<span className={`wrapper-answer-input`}>
-							<input type="text"/>
+							<input
+								className={`answer-input`}
+								placeholder={`Odgovor`}
+								data-answer={zadatakAnswerTop}
+							/>
 						</span>
+						</li>
+						<li>
+							<span className={`wrapper-answer-input`}>
+								<input
+									className={`answer-input`}
+									placeholder={`Odgovor`}
+									data-answer={zadatakAnswerBot}
+								/>
+							</span>
 						</li>
 					</ul>
 				</div>
@@ -74,16 +105,31 @@ registerBlockType('visual-editor/fraction-input', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {zadatakAnswer} = attributes;
+		const {zadatakAnswerTop, zadatakAnswerBot} = attributes;
 
 		return (
-			<span className={`wrapper-answer-input`}>
-				<input
-					className={`answer-input`}
-					placeholder='Odgovor'
-					data-answer={zadatakAnswer}
-				/>
-			</span>
+				<div className={`assignment-fraction`}>
+					<ul>
+						<li>
+						<span className={`wrapper-answer-input`}>
+							<input
+								className={`answer-input`}
+								placeholder={`Odgovor`}
+								data-answer={zadatakAnswerTop}
+							/>
+						</span>
+						</li>
+						<li>
+							<span className={`wrapper-answer-input`}>
+								<input
+									className={`answer-input`}
+									placeholder={`Odgovor`}
+									data-answer={zadatakAnswerBot}
+								/>
+							</span>
+						</li>
+					</ul>
+				</div>
 		);
 	}
 });

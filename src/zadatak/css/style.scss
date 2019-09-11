@@ -144,6 +144,41 @@
 		}
 	}
 
+	.assignment-fraction {
+		display: inline-flex;
+		align-items: center !important;
 
+		ul {
+			list-style: none;
+			padding: 0;
+			margin-bottom: 0;
+			margin-left: 5px;
+
+			li:first-of-type {
+				border-bottom: 2px solid #ccc;
+			}
+
+			li {
+				min-height: 65px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				pointer-events: all !important;
+			}
+		}
+
+		.wrapper-answer-input {
+			max-width: 50px;
+		}
+
+		.answer-input {
+			padding: 0 5px !important;
+			max-width: 50px;
+		}
+	}
 }
 
+.MJXc-display {
+	display: inline !important;
+}

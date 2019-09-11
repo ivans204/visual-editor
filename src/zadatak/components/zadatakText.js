@@ -51,13 +51,11 @@ registerBlockType('visual-editor/zadatak-text', {
 		const {zadatakText} = attributes;
 
 		return (
-			<div className={`answer-holder assignment-container inline`}>
-				<RichText.Content
-					className={`inline`}
-					tagName='p'
-					value={zadatakText}
-				/>
-			</div>
+			<RichText.Content
+				// className={`inline`}
+				// tagName='p'
+				value={zadatakText}
+			/>
 		);
 	}
 });

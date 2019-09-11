@@ -341,3 +341,34 @@
     -ms-flex-pack: justify;
         justify-content: space-between;
     margin-bottom: 20px; }
+
+.assignment-container .assignment-fraction {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-align: center !important;
+      align-items: center !important; }
+  .assignment-container .assignment-fraction ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 5px; }
+    .assignment-container .assignment-fraction ul li:first-of-type {
+      border-bottom: 2px solid #ccc; }
+    .assignment-container .assignment-fraction ul li {
+      min-height: 65px;
+      text-align: center;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      pointer-events: all !important; }
+  .assignment-container .assignment-fraction .wrapper-answer-input {
+    max-width: 50px; }
+  .assignment-container .assignment-fraction .answer-input {
+    padding: 0 5px !important;
+    max-width: 50px; }
+
+.MJXc-display {
+  display: inline !important; }
