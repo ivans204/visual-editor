@@ -1,4 +1,10 @@
 .assignment-container {
+
+	.flex-center {
+		display: flex;
+		align-items: center;
+	}
+
 	h2 {
 		position: relative;
 		font-weight: 800 !important;

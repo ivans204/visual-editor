@@ -76,8 +76,9 @@ registerBlockType('visual-editor/zadatak', {
 					tagName='h2'
 					value={zadatakTitle}
 				/>
-
-				<InnerBlocks.Content/>
+				<div className={`flex-center`}>
+					<InnerBlocks.Content/>
+				</div>
 			</div>
 		);
 	}

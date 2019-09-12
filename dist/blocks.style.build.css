@@ -201,6 +201,12 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+.assignment-container .flex-center {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+
 .assignment-container h2 {
   position: relative;
   font-weight: 800 !important;
