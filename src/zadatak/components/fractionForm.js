@@ -7,15 +7,21 @@ const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 
 const {
-	RichText,
+	InnerBlocks,
 } = wp.blockEditor;
 
 const {} = wp.components;
 
 const {} = wp.element;
 
-registerBlockType('visual-editor/zadatak-text', {
-	title: __('zadatak tekst'),
+const allowed_blocks = [
+	'visual-editor/fraction-input',
+	'visual-editor/zadatak-text',
+	'visual-editor/samo-text',
+];
+
+registerBlockType('visual-editor/fraction-form', {
+	title: __('razlomak forma'),
 	icon: 'edit',
 	category: 'zadatak',
 	attributes: {
@@ -26,34 +32,27 @@ registerBlockType('visual-editor/zadatak-text', {
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {zadatakText} = attributes;
-
-		function onChangeZadatakText(newText) {
-			setAttributes({
-				zadatakText: newText,
-			})
-		}
+		const {} = attributes;
 
 		return (
 
-			<RichText
-				value={zadatakText}
-				onChange={onChangeZadatakText}
-				placehlolder={__('Tekst zadataka')}
-			/>
+			<div className={`assignment-fraction`}>
+				<InnerBlocks
+					allowedBlocks={allowed_blocks}
+				/>
+			</div>
 
 		);
 	},
 
 	save: function (props) {
 		const {attributes} = props;
-		const {zadatakText} = attributes;
+		const {} = attributes;
 
 		return (
-			<RichText.Content
-				// tagName='p'
-				value={zadatakText}
-			/>
+			<div className={`assignment-fraction`}>
+				<InnerBlocks.Content/>
+			</div>
 		);
 	}
 });

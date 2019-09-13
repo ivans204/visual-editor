@@ -1,4 +1,10 @@
-.answer-holder {
+.assignment-container {
+
+	.flex-center {
+		display: flex;
+		align-items: center;
+	}
+
 	h2 {
 		position: relative;
 		font-weight: 800 !important;
@@ -20,6 +26,10 @@
 		z-index: -1;
 	}
 
+	.inline {
+		display: inline-block !important;
+	}
+
 	.wrapper-answer-input {
 		width: 250px;
 		display: inline-block;
@@ -34,6 +44,20 @@
 			background-color: #ececec;
 			border: 2px solid #ececec;
 		}
+	}
+
+	.answer-check {
+		border-radius: 3px;
+		height: 46px;
+		padding: 0 20px;
+		border: none;
+		background-color: #69b11b;
+		box-shadow: 0 16px 29px 0 rgba(105, 177, 27, .49);
+		font-size: .75rem;
+		font-weight: 600;
+		letter-spacing: .5px;
+		color: #fff;
+		text-transform: uppercase;
 	}
 
 	.a-btn {
@@ -56,6 +80,12 @@
 	.a-btn:hover {
 		margin-top: 5px;
 		margin-bottom: -5px;
+	}
+
+	.button-holder {
+		display: flex;
+		width: 100%;
+		margin-top: 30px;
 	}
 
 	.answer-check {
@@ -98,4 +128,59 @@
 		}
 	}
 
+	.solution, .hint {
+		background-color: #fff;
+		box-shadow: 0 21px 40px 0 rgba(0, 0, 0, .2);
+		padding: 32px;
+		width: 100%;
+		max-width: 380px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -240px;
+		margin-left: -240px;
+		height: 320px;
+		z-index: 554;
+		overflow-y: auto;
+
+		.solution-title, .hint-title {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+		}
+	}
+
+	.assignment-fraction {
+		display: inline-flex;
+		align-items: center !important;
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin-bottom: 0;
+			margin-left: 5px;
+
+			li:first-of-type {
+				border-bottom: 2px solid #ccc;
+			}
+
+			li {
+				min-height: 65px;
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				pointer-events: all !important;
+			}
+		}
+
+		.wrapper-answer-input {
+			max-width: 50px;
+		}
+
+		.answer-input {
+			padding: 0 5px !important;
+			max-width: 50px;
+		}
+	}
 }

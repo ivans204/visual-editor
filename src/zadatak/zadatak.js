@@ -17,9 +17,10 @@ const {Fragment} = wp.element;
 
 const allowed_blocks = [
 	'visual-editor/single-input',
-	'visual-editor/fraction-input',
+	'visual-editor/fraction-form',
 	'visual-editor/zadatak-text',
 	'visual-editor/zadatak-buttons',
+	'visual-editor/samo-text',
 ];
 
 registerBlockType('visual-editor/zadatak', {
@@ -76,9 +77,9 @@ registerBlockType('visual-editor/zadatak', {
 					tagName='h2'
 					value={zadatakTitle}
 				/>
-				<div className={`flex-center`}>
-					<InnerBlocks.Content/>
-				</div>
+				{/*<div>*/}
+				<InnerBlocks.Content/>
+				{/*</div>*/}
 			</div>
 		);
 	}

@@ -7,7 +7,8 @@ const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 
 const {
-	InspectorControls
+	InspectorControls,
+	RichText,
 } = wp.blockEditor;
 
 const {
@@ -30,7 +31,10 @@ registerBlockType('visual-editor/fraction-input', {
 		zadatakAnswerBot: {
 			type: 'string',
 			value: null,
-		}
+		},
+		zadatakText: {
+			type: 'string',
+		},
 	},
 
 	edit: function (props) {
@@ -77,9 +81,8 @@ registerBlockType('visual-editor/fraction-input', {
 					</PanelBody>
 				</InspectorControls>
 
-				<div className={`assignment-fraction`}>
-					<ul>
-						<li>
+				<ul>
+					<li>
 						<span className={`wrapper-answer-input`}>
 							<input
 								className={`answer-input`}
@@ -87,18 +90,17 @@ registerBlockType('visual-editor/fraction-input', {
 								data-answer={zadatakAnswerTop}
 							/>
 						</span>
-						</li>
-						<li>
-							<span className={`wrapper-answer-input`}>
-								<input
-									className={`answer-input`}
-									placeholder={`Odgovor`}
-									data-answer={zadatakAnswerBot}
-								/>
-							</span>
-						</li>
-					</ul>
-				</div>
+					</li>
+					<li>
+						<span className={`wrapper-answer-input`}>
+							<input
+								className={`answer-input`}
+								placeholder={`Odgovor`}
+								data-answer={zadatakAnswerBot}
+							/>
+						</span>
+					</li>
+				</ul>
 			</Fragment>
 		);
 	},
@@ -108,28 +110,26 @@ registerBlockType('visual-editor/fraction-input', {
 		const {zadatakAnswerTop, zadatakAnswerBot} = attributes;
 
 		return (
-				<div className={`assignment-fraction`}>
-					<ul>
-						<li>
-						<span className={`wrapper-answer-input`}>
-							<input
-								className={`answer-input`}
-								placeholder={`Odgovor`}
-								data-answer={zadatakAnswerTop}
-							/>
-						</span>
-						</li>
-						<li>
-							<span className={`wrapper-answer-input`}>
-								<input
-									className={`answer-input`}
-									placeholder={`Odgovor`}
-									data-answer={zadatakAnswerBot}
-								/>
-							</span>
-						</li>
-					</ul>
-				</div>
+			<ul>
+				<li>
+					<span className={`wrapper-answer-input`}>
+						<input
+							className={`answer-input`}
+							placeholder={`Odgovor`}
+							data-answer={zadatakAnswerTop}
+						/>
+					</span>
+				</li>
+				<li>
+					<span className={`wrapper-answer-input`}>
+						<input
+							className={`answer-input`}
+							placeholder={`Odgovor`}
+							data-answer={zadatakAnswerBot}
+						/>
+					</span>
+				</li>
+			</ul>
 		);
 	}
 });

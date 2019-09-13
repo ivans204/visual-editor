@@ -18,5 +18,7 @@ import './zadatak/zadatak';
 import './zadatak/zadatakOld';
 import './zadatak/components/singleInput';
 import './zadatak/components/fractionInput';
+import './zadatak/components/fractionForm';
+import './zadatak/components/samoText';
 import './zadatak/components/zadatakText';
 import './zadatak/components/buttons';

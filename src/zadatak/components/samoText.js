@@ -14,8 +14,8 @@ const {} = wp.components;
 
 const {} = wp.element;
 
-registerBlockType('visual-editor/zadatak-text', {
-	title: __('zadatak tekst'),
+registerBlockType('visual-editor/samo-text', {
+	title: __('samo tekst'),
 	icon: 'edit',
 	category: 'zadatak',
 	attributes: {
@@ -41,7 +41,6 @@ registerBlockType('visual-editor/zadatak-text', {
 				onChange={onChangeZadatakText}
 				placehlolder={__('Tekst zadataka')}
 			/>
-
 		);
 	},
 
@@ -51,7 +50,7 @@ registerBlockType('visual-editor/zadatak-text', {
 
 		return (
 			<RichText.Content
-				// tagName='p'
+				tagName='p'
 				value={zadatakText}
 			/>
 		);
