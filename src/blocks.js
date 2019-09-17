@@ -25,5 +25,4 @@ import './primjer/components/primjer-text.js';
 // import './zadatak/components/buttons';
 
 import './fraction/fractionZadatak';
-import './fraction/components/naslov';
-import './fraction/components/textFraction';
+import './fraction/components/text';

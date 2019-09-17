@@ -18,6 +18,7 @@ const {Fragment} = wp.element;
 const allowed_blocks = [
 	'visual-editor/fraction-title',
 	'visual-editor/fraction-text',
+	'visual-editor/text',
 ];
 
 registerBlockType('visual-editor/fraction', {

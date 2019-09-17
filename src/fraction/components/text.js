@@ -4,6 +4,8 @@ import '../css/editor.scss';
 
 import attr from '../props';
 
+const {textOptions} = attr;
+
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 
@@ -21,15 +23,38 @@ const {
 
 const {Fragment} = wp.element;
 
-registerBlockType('visual-editor/fraction-title', {
-	title: __('Naslov'),
+registerBlockType('visual-editor/text', {
+	title: __('tekst'),
 	icon: 'editor-textcolor',
 	category: 'razlomak',
 	attributes: attr,
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {textType} = attributes;
+		const {textType, textContent} = attributes;
+
+		function onTextTypeChange(type) {
+			setAttributes({
+				textType: type,
+			});
+		}
+
+		function onTextChange(text) {
+			setAttributes({
+				textContent: text,
+			});
+		}
+
+		function typeOfText() {
+			return (
+				<RichText
+					tagName={textType}
+					value={textContent}
+					onChange={onTextChange}
+					placeholder={__('Unesi tekst')}
+				/>
+			)
+		}
 
 		return (
 			<Fragment>
@@ -39,25 +64,30 @@ registerBlockType('visual-editor/fraction-title', {
 						icon='editor-textcolor'
 						initalOpen={true}
 					>
-						<PanelRow>
-							<SelectControl
-								label='Tip teksta'
-								value={textType}
-								options={[]}
-							/>
-						</PanelRow>
+						<SelectControl
+							label='Tip teksta'
+							value={textType}
+							options={textOptions}
+							onChange={onTextTypeChange}
+						/>
 					</PanelBody>
 				</InspectorControls>
+				{
+					typeOfText()
+				}
 			</Fragment>
 		);
 	},
 
 	save: function (props) {
 		const {attributes} = props;
-		const {} = attributes;
+		const {textType, textContent} = attributes;
 
 		return (
-			1
+			<RichText.Content
+				tagName={textType}
+				value={textContent}
+			/>
 		);
 	}
 });
