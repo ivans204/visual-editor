@@ -14,11 +14,16 @@ import './primjer/primjer.js';
 import './primjer/customBlock.js';
 import './primjer/imageUpload.js';
 import './primjer/components/primjer-text.js';
-import './zadatak/zadatak';
-import './zadatak/zadatakOld';
-import './zadatak/components/singleInput';
-import './zadatak/components/fractionInput';
-import './zadatak/components/fractionForm';
-import './zadatak/components/samoText';
-import './zadatak/components/zadatakText';
-import './zadatak/components/buttons';
+
+// import './zadatak/zadatak';
+// import './zadatak/zadatakOld';
+// import './zadatak/components/singleInput';
+// import './zadatak/components/fractionInput';
+// import './zadatak/components/fractionForm';
+// import './zadatak/components/samoText';
+// import './zadatak/components/zadatakText';
+// import './zadatak/components/buttons';
+
+import './fraction/fractionZadatak';
+import './fraction/components/naslov';
+import './fraction/components/textFraction';

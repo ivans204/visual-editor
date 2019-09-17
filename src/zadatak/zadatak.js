@@ -77,9 +77,7 @@ registerBlockType('visual-editor/zadatak', {
 					tagName='h2'
 					value={zadatakTitle}
 				/>
-				{/*<div>*/}
 				<InnerBlocks.Content/>
-				{/*</div>*/}
 			</div>
 		);
 	}

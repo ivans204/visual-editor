@@ -7,12 +7,10 @@ const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 
 const {
-	RichText,
 	InspectorControls
 } = wp.blockEditor;
 
 const {
-	TextControl,
 	TextareaControl,
 	PanelBody,
 	PanelRow,

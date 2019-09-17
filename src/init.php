@@ -88,6 +88,10 @@ function custom_new_category($categories, $post)
 			array(
 				'slug' => 'zadatak',
 				'title' => __('Zadatak'),
+			),
+			array(
+				'slug' => 'razlomak',
+				'title' => __('Razlomak'),
 			)
 		)
 	);

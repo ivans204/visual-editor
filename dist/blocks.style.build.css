@@ -201,13 +201,7 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.entry .assignment-container .flex-center {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center; }
-
-.entry .assignment-container h2 {
+.assignment-container h2 {
   position: relative;
   font-weight: 800 !important;
   color: #555 !important;
@@ -216,7 +210,7 @@
   z-index: 0;
   font-size: 2.1rem; }
 
-.entry .assignment-container h2:after {
+.assignment-container h2:after {
   content: " ";
   background-image: url(/wp-content/themes/kresimira/img/zadatak-svg.svg);
   position: absolute;
@@ -226,152 +220,5 @@
   left: -14px;
   z-index: -1; }
 
-.entry .assignment-container .inline {
-  display: inline-block !important; }
-
-.entry .assignment-container .wrapper-answer-input {
-  width: 250px;
-  display: inline-block;
-  margin: 10px 10px 0 0;
-  position: relative; }
-  .entry .assignment-container .wrapper-answer-input .answer-input {
-    width: 100%;
-    height: 46px;
-    border-radius: 3px;
-    padding: 0 20px;
-    background-color: #ececec;
-    border: 2px solid #ececec; }
-
-.entry .assignment-container .answer-check {
-  border-radius: 3px;
-  height: 46px;
-  padding: 0 20px;
-  border: none;
-  background-color: #69b11b;
-  -webkit-box-shadow: 0 16px 29px 0 rgba(105, 177, 27, 0.49);
-          box-shadow: 0 16px 29px 0 rgba(105, 177, 27, 0.49);
-  font-size: .75rem;
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: #fff;
-  text-transform: uppercase; }
-
-.entry .assignment-container .a-btn {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  height: 46px;
-  min-width: 46px;
-  border: none;
-  font-size: .75rem;
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: #fff;
-  text-transform: uppercase;
-  border-radius: 4px;
-  -webkit-transition: all .2s linear;
-  -o-transition: all .2s linear;
-  transition: all .2s linear;
-  cursor: pointer; }
-
-.entry .assignment-container .a-btn:hover {
-  margin-top: 5px;
-  margin-bottom: -5px; }
-
-.entry .assignment-container .button-holder {
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  margin-top: 30px; }
-
-.entry .assignment-container .answer-check {
-  border-radius: 3px;
-  height: 46px;
-  padding: 0 20px;
-  border: none;
-  background-color: #69b11b;
-  -webkit-box-shadow: 0 16px 29px 0 rgba(105, 177, 27, 0.49);
-          box-shadow: 0 16px 29px 0 rgba(105, 177, 27, 0.49);
-  font-size: .75rem;
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: #fff;
-  text-transform: uppercase;
-  width: 170px; }
-
-.entry .assignment-container .answer-hint {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  background-color: #fcca17;
-  -webkit-box-shadow: 0 16px 29px 0 rgba(252, 202, 23, 0.55);
-          box-shadow: 0 16px 29px 0 rgba(252, 202, 23, 0.55); }
-
-.entry .assignment-container .answer-solution {
-  background-color: #6a3fbe;
-  -webkit-box-shadow: 0 16px 29px 0 rgba(106, 63, 190, 0.49);
-          box-shadow: 0 16px 29px 0 rgba(106, 63, 190, 0.49); }
-
-.entry .assignment-container .answer-reset {
-  background-color: #2395ee;
-  -webkit-box-shadow: 0 16px 29px 0 rgba(35, 149, 238, 0.49);
-          box-shadow: 0 16px 29px 0 rgba(35, 149, 238, 0.49); }
-
-.entry .assignment-container .assignment-container-options {
-  display: -ms-flexbox;
-  display: flex;
-  margin-left: 15px; }
-  .entry .assignment-container .assignment-container-options button {
-    margin-right: 15px; }
-
-.entry .assignment-container .solution, .entry .assignment-container .hint {
-  background-color: #fff;
-  -webkit-box-shadow: 0 21px 40px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 21px 40px 0 rgba(0, 0, 0, 0.2);
-  padding: 32px;
-  width: 100%;
-  max-width: 380px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -240px;
-  margin-left: -240px;
-  height: 320px;
-  z-index: 554;
-  overflow-y: auto; }
-  .entry .assignment-container .solution .solution-title, .entry .assignment-container .solution .hint-title, .entry .assignment-container .hint .solution-title, .entry .assignment-container .hint .hint-title {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    margin-bottom: 20px; }
-
-.entry .assignment-container .assignment-fraction {
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-align: center !important;
-      align-items: center !important; }
-  .entry .assignment-container .assignment-fraction ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0;
-    margin-left: 5px; }
-    .entry .assignment-container .assignment-fraction ul li:first-of-type {
-      border-bottom: 2px solid #ccc; }
-    .entry .assignment-container .assignment-fraction ul li {
-      min-height: 65px;
-      text-align: center;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-pack: center;
-          justify-content: center;
-      -ms-flex-align: center;
-          align-items: center;
-      pointer-events: all !important; }
-  .entry .assignment-container .assignment-fraction .wrapper-answer-input {
-    max-width: 50px; }
-  .entry .assignment-container .assignment-fraction .answer-input {
-    padding: 0 5px !important;
-    max-width: 50px; }
+.MJXc-display {
+  display: initial !important; }

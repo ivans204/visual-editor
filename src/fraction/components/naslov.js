@@ -1,7 +1,8 @@
 import React from 'react';
-
 import '../css/style.scss';
 import '../css/editor.scss';
+
+import attr from '../props';
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
@@ -14,43 +15,40 @@ const {} = wp.components;
 
 const {} = wp.element;
 
-registerBlockType('visual-editor/samo-text', {
-	title: __('samo tekst'),
-	icon: 'edit',
-	category: 'zadatak',
-	attributes: {
-		zadatakText: {
-			type: 'string',
-		},
-	},
+registerBlockType('visual-editor/fraction-title', {
+	title: __('Naslov'),
+	icon: 'editor-textcolor',
+	category: 'razlomak',
+	attributes: attr,
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {zadatakText} = attributes;
+		const {fractionTitle} = attributes;
 
-		function onChangeZadatakText(newText) {
+		function onFractionTitleChange(title) {
 			setAttributes({
-				zadatakText: newText,
-			})
+				fractionTitle: title,
+			});
 		}
 
 		return (
 			<RichText
-				value={zadatakText}
-				onChange={onChangeZadatakText}
-				placehlolder={__('Tekst zadataka')}
+				tagName='h2'
+				onChange={onFractionTitleChange}
+				value={fractionTitle}
+				placeholder={__('Naslov')}
 			/>
 		);
 	},
 
 	save: function (props) {
 		const {attributes} = props;
-		const {zadatakText} = attributes;
+		const {fractionTitle} = attributes;
 
 		return (
 			<RichText.Content
-				tagName='p'
-				value={zadatakText}
+				tagName='h2'
+				value={fractionTitle}
 			/>
 		);
 	}
