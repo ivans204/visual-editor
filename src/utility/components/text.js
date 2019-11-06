@@ -17,8 +17,6 @@ const {
 const {
 	SelectControl,
 	PanelBody,
-	PanelRow,
-	Button,
 } = wp.components;
 
 const {Fragment} = wp.element;
@@ -26,7 +24,7 @@ const {Fragment} = wp.element;
 registerBlockType('visual-editor/text', {
 	title: __('tekst'),
 	icon: 'editor-textcolor',
-	category: 'razlomak',
+	category: 'utility',
 	attributes: attr,
 
 	edit: function (props) {

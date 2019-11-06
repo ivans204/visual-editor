@@ -4,203 +4,369 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-.entry .is__widget {
-  position: relative; }
+p {
+  font-size: 1.1rem; }
 
-.entry .kutak {
-  min-height: 1rem;
-  margin: 30px 0 30px 0;
-  overflow: hidden; }
-  .entry .kutak p {
-    margin: 0;
-    overflow: visible; }
-  .entry .kutak .widget-inner-title {
-    text-transform: uppercase;
+.entry {
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */
+  /***
+	 *
+	 */ }
+  .entry .is__widget {
+    position: relative;
+    margin-top: 1rem; }
+  .entry .is__widget.kutak {
+    min-height: 1rem;
+    margin: 30px 0 30px 0;
+    overflow: hidden; }
+    .entry .is__widget.kutak > div {
+      padding: 30px 40px 0;
+      display: block;
+      overflow: auto;
+      opacity: 1; }
+    .entry .is__widget.kutak > div ~ h3,
+    .entry .is__widget.kutak > div ~ .widget-inner-title {
+      margin-top: 48px; }
+    .entry .is__widget.kutak .widget-inner-title span {
+      font-size: 1rem !important; }
+  .entry .is__widget.kutak::before {
+    background-size: 80px 81px; }
+  .entry .is__widget.kutak > p {
+    margin: 0; }
+  .entry .is__widget.kutak > div {
+    border-left: 4px solid transparent;
+    border-image-slice: 1 !important;
+    padding: 20px 40px !important; }
+  .entry .is__widget.kutak.kutak-plus > div {
+    border-left: solid #519de9 4px; }
+  .entry .is__widget.kutak.kutak-plus::before {
+    background-color: #edf5fc; }
+  .entry .is__widget.kutak.kutak-iz-zabavne-matematike > div {
+    -webkit-border-image: -webkit-linear-gradient(84deg, #6a11cb, #4a37e0);
+         -o-border-image: -o-linear-gradient(84deg, #6a11cb, #4a37e0);
+            border-image: linear-gradient(6deg, #6a11cb, #4a37e0); }
+  .entry .is__widget.kutak.kutak-iz-zabavne-matematike::before {
+    background-color: #efeafb; }
+  .entry .is__widget.kutak.kutak-povijesni-kutak > div {
+    -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#f87d29), to(#f89539));
+    -webkit-border-image: -webkit-linear-gradient(bottom, #f87d29, #f89539);
+         -o-border-image: -o-linear-gradient(bottom, #f87d29, #f89539);
+            border-image: -webkit-gradient(linear, left bottom, left top, from(#f87d29), to(#f89539));
+            border-image: linear-gradient(0deg, #f87d29, #f89539); }
+  .entry .is__widget.kutak.kutak-povijesni-kutak::before {
+    background-color: #fef3e9; }
+  .entry .is__widget.kutak.kutak-promislite > div {
+    -webkit-border-image: -webkit-linear-gradient(281deg, #84fab0, #71cfe5);
+         -o-border-image: -o-linear-gradient(281deg, #84fab0, #71cfe5);
+            border-image: linear-gradient(169deg, #84fab0, #71cfe5); }
+  .entry .is__widget.kutak.kutak-promislite::before {
+    background-color: #f2fef7; }
+  .entry .is__widget.kutak.kutak-istrazite > div {
+    -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
+    -webkit-border-image: -webkit-linear-gradient(bottom, #c8395a, #dc3f64);
+         -o-border-image: -o-linear-gradient(bottom, #c8395a, #dc3f64);
+            border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
+            border-image: linear-gradient(0deg, #c8395a, #dc3f64); }
+  .entry .is__widget.kutak.kutak-istrazite::before {
+    background-color: #faebee; }
+  .entry .is__widget.kutak.kutak-bez-rijeci > div {
+    -webkit-border-image: -webkit-linear-gradient(84deg, #11998e, #38ef7d);
+         -o-border-image: -o-linear-gradient(84deg, #11998e, #38ef7d);
+            border-image: linear-gradient(6deg, #11998e, #38ef7d); }
+  .entry .is__widget.kutak.kutak-bez-rijeci::before {
+    background-color: #e9f9f2; }
+  .entry .is__widget.kutak[class^="is__widget kutak kutak-pogled-u"]::before {
+    background-image: url(/wp-content/themes/kresimira/img/bez-rijeci-ikona.svg); }
+  .entry .is__widget.kutak[class^="is__widget kutak kutak-pogled-u"]::before > div {
+    -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#11998e), to(#38ef7d));
+    -webkit-border-image: -webkit-linear-gradient(bottom, #11998e, #38ef7d);
+         -o-border-image: -o-linear-gradient(bottom, #11998e, #38ef7d);
+            border-image: -webkit-gradient(linear, left bottom, left top, from(#11998e), to(#38ef7d));
+            border-image: linear-gradient(0deg, #11998e, #38ef7d); }
+  .entry .is__widget.kutak[class^="is__widget kutak kutak-pogled-u"]::before::before {
+    background-color: #e9f9f2; }
+  .entry .is__widget.kutak.kutak-promislite .widget-inner-title:first-of-type {
+    color: #57c6c5; }
+  .entry .is__widget.kutak.kutak-promislite::before {
+    content: ''; }
+  .entry .is__widget.kutak.kutak-promislite .widget-inner-title {
+    margin-top: -63px; }
+  .entry .is__widget.kutak.kutak-promislite > div {
+    margin-top: 14px; }
+  .entry .kutak.kutak-promislite::before {
+    background-image: url(/wp-content/themes/kresimira/img/kutak_promislite.svg); }
+  .entry .is__widget.kutak.active > div {
+    opacity: 1; }
+  .entry .kutak::before {
+    background-repeat: no-repeat; }
+  .entry .kutak .circle-image {
+    background-size: cover; }
+  .entry .kutak > h3:first-of-type,
+  .entry .kutak .widget-inner-title:first-of-type {
     padding-right: 23px;
     font-weight: 800;
-    letter-spacing: .8px;
+    letter-spacing: 0.8px;
     text-align: left;
+    text-transform: uppercase;
     margin-left: 98px;
     font-size: 1.75rem;
     display: block;
-    margin-top: -63px; }
-  .entry .kutak .kutak-content {
-    margin-top: 14px;
-    border-left: 4px solid transparent;
-    border-image-slice: 1 !important;
-    padding: 20px 40px !important;
-    padding: 0 40px;
-    padding-top: 30px;
+    margin-top: -49px; }
+  .entry .widget-inner-title {
+    margin-top: -49px; }
+  .entry .kutak.kutak-istrazite h3:first-of-type,
+  .entry .kutak.kutak-istrazite .widget-inner-title:first-of-type {
+    color: #ec456c; }
+  .entry .kutak.kutak-istrazite .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/istrazite_old.svg); }
+  .entry .kutak.kutak-istrazite::before {
+    background-image: url(/wp-content/themes/kresimira/img/istrazite.svg); }
+  .entry .kutak.kutak-povijesni-kutak h3:first-of-type,
+  .entry .kutak.kutak-povijesni-kutak .widget-inner-title:first-of-type {
+    color: #a05a33; }
+  .entry .kutak.kutak-povijesni-kutak .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/povijesni.svg); }
+  .entry .kutak.kutak-povijesni-kutak::before {
+    background-image: url(/wp-content/themes/kresimira/img/8-a-povijesni-kutak-square.svg); }
+  .entry .kutak.kutak-bez-rijeci h3:first-of-type,
+  .entry .kutak.kutak-bez-rijeci .widget-inner-title:first-of-type {
+    color: #1cb189; }
+  .entry .kutak.kutak-bez-rijeci .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
+  .entry .kutak.kutak-bez-rijeci::before {
+    background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
+  .entry .kutak.kutak-iz-zabavne-matematike h3:first-of-type,
+  .entry .kutak.kutak-iz-zabavne-matematike .widget-inner-title:first-of-type {
+    color: #0d67c1; }
+  .entry .kutak.kutak-iz-zabavne-matematike .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/iz-zabavne-matematike_old.svg); }
+  .entry .kutak.kutak-iz-zabavne-matematike::before {
+    background-image: url(/wp-content/themes/kresimira/img/iz-zabavne-matematike.svg); }
+  .entry .kutak.za-radoznale h3:first-of-type,
+  .entry .kutak.za-radoznale .widget-inner-title:first-of-type {
+    color: #44a15d; }
+  .entry .kutak.za-radoznale .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/za-radoznale.svg); }
+  .entry .kutak.za-radoznale::before {
+    background-image: url(/wp-content/themes/kresimira/img/za-radoznale-ikona.svg); }
+  .entry .kutak.kutak-plus > h3:first-of-type,
+  .entry .kutak.kutak-plus .widget-inner-title:first-of-type {
+    color: #0089bf; }
+  .entry .kutak.kutak-plus .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/kutak-plus.svg); }
+  .entry .kutak.kutak-plus::before {
+    background-image: url(/wp-content/themes/kresimira/img/6-a-kutak-plus-square.svg); }
+  .entry .kutak.kutak-sazetak h3:first-of-type,
+  .entry .kutak.kutak-sazetak .widget-inner-title:first-of-type {
+    color: #148278; }
+  .entry .kutak.kutak-sazetak .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/sazetak.svg); }
+  .entry .kutak.kutak-sazetak::before {
+    background-image: url(/wp-content/themes/kresimira/img/sazetak-ikona.svg); }
+  .entry .kutak.kutak-napomena h3:first-of-type,
+  .entry .kutak.kutak-napomena .widget-inner-title:first-of-type {
+    color: #148278; }
+  .entry .kutak.kutak-napomena .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/napomena.svg); }
+  .entry .kutak.kutak-napomena::before {
+    background-image: url(/wp-content/themes/kresimira/img/napomena-ikona.svg); }
+  .entry .kutak.kutak-kljucni-pojmovi h3:first-of-type,
+  .entry .kutak.kutak-kljucni-pojmovi .widget-inner-title:first-of-type {
+    color: #26a69a; }
+  .entry .kutak.kutak-kljucni-pojmovi .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/kljucni-pojmovi.svg); }
+  .entry .kutak.kutak-kljucni-pojmovi::before {
+    background-image: url(/wp-content/themes/kresimira/img/kljucni-pojmovi-ikona.svg); }
+  .entry .kutak[class^="kutak-pogled-u"] h3:first-of-type,
+  .entry .kutak[class^="kutak-pogled-u"] .widget-inner-title:first-of-type {
+    color: #813d85; }
+  .entry .kutak[class^="kutak-pogled-u"] .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
+  .entry .kutak[class^="kutak-pogled-u"]::before {
+    background-image: url(/wp-content/themes/kresimira/img/bez-rijeci-ikona.svg); }
+  .entry .kutak.kutak-pokus h3:first-of-type,
+  .entry .kutak.kutak-pokus .widget-inner-title:first-of-type {
+    color: #4f56c9; }
+  .entry .kutak.kutak-pokus .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/pokus.svg); }
+  .entry .kutak.kutak-pokus::before {
+    background-image: url(/wp-content/themes/kresimira/img/pokus-ikona.svg); }
+  .entry .kutak.kutak-zanimljivost h3:first-of-type,
+  .entry .kutak.kutak-zanimljivost .widget-inner-title:first-of-type {
+    color: #ad1457; }
+  .entry .kutak.kutak-zanimljivost .circle-image {
+    background-image: url(/wp-content/themes/kresimira/img/zanimljivost.svg); }
+  .entry .kutak.kutak-zanimljivost::before {
+    background-image: url(/wp-content/themes/kresimira/img/zanimljivost-ikona.svg); }
+  .entry .is__widget.kutak::before {
+    padding-right: 23px;
+    content: attr(data-title);
     display: block;
-    overflow: auto;
-    opacity: 1;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-
-.entry .kutak.kutak-promislite .widget-inner-title {
-  color: #57c6c5; }
-
-.entry .kutak.kutak-promislite .kutak-content {
-  -webkit-border-image: -webkit-linear-gradient(281deg, #84fab0, #71cfe5);
-       -o-border-image: -o-linear-gradient(281deg, #84fab0, #71cfe5);
-          border-image: linear-gradient(169deg, #84fab0, #71cfe5); }
-
-.entry .kutak.kutak-istrazite .widget-inner-title {
-  color: #ec456c; }
-
-.entry .kutak.kutak-istrazite .kutak-content {
-  -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
-  -webkit-border-image: -webkit-linear-gradient(bottom, #c8395a, #dc3f64);
-       -o-border-image: -o-linear-gradient(bottom, #c8395a, #dc3f64);
-          border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
-          border-image: linear-gradient(0deg, #c8395a, #dc3f64); }
-
-.entry .kutak::before {
-  padding-right: 23px;
-  display: block;
-  font-family: "Open Sans", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  top: 40px;
-  height: 80px;
-  z-index: 1;
-  padding-top: 14px;
-  padding-left: 97px;
-  background-repeat: no-repeat;
-  background-size: 80px 81px; }
-
-.entry .kutak-promislite::before {
-  content: '';
-  background-color: #f2fef7;
-  background-image: url(/wp-content/themes/kresimira/img/kutak_promislite.svg); }
-
-.entry .kutak-istrazite::before {
-  content: '';
-  background-color: #faebee;
-  background-image: url(/wp-content/themes/kresimira/img/istrazite.svg); }
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-.entry .example {
-  overflow: visible;
-  background-size: contain;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position-y: 0;
-  padding-top: 20px;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-  border-top: 4px solid #f01260;
-  border-bottom: 4px solid #c24894;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 39px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 39px 0 rgba(0, 0, 0, 0.1); }
-  .entry .example .assignment-title {
-    font-size: 1.75rem;
-    font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
     font-style: normal;
     font-stretch: normal;
     line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #e02473;
-    max-width: 512px;
-    width: 100%;
-    height: 92px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 40px;
+    height: 80px;
+    z-index: 1;
+    padding-top: 14px;
+    padding-left: 97px; }
+  .entry .is__widget.kutak img {
+    border-radius: 2px; }
+  .entry .circle-image {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-        align-items: center;
-    position: relative;
-    padding: 0 20px 0 100px; }
-  .entry .example .assignment-title::before {
-    content: '';
-    margin-left: 10px;
-    width: 75px;
-    height: 75px;
+    width: 400px;
+    height: 400px;
+    float: left;
+    border-radius: 50%; }
+    .entry .circle-image img {
+      margin-top: 20px !important;
+      margin-bottom: 20px !important;
+      -webkit-box-shadow: -30px 26px 58px 0 rgba(0, 0, 0, 0.5) !important;
+              box-shadow: -30px 26px 58px 0 rgba(0, 0, 0, 0.5) !important;
+      border-radius: 10px; }
+  @media screen and (max-width: 576px) {
+    .entry .circle-image {
+      width: 280px;
+      height: 280px;
+      float: none !important;
+      border-radius: 10000px; }
+      .entry .circle-image .left {
+        float: none !important; }
+      .entry .circle-image .alignleft {
+        float: none !important; }
+      .entry .circle-image img {
+        max-width: 300px;
+        height: auto; }
+    .entry .is__widget.kutak > div {
+      padding: 20px 10px !important; } }
+  .entry .circle-image.left {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px; }
+  .entry .circle-image.right {
+    float: right;
+    margin-left: 30px;
+    margin-bottom: 30px; }
+  .entry .circle-image.center {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background-image: url(/wp-content/themes/kresimira/img/primjer_ikona.svg); }
-  .entry .example .example-text {
-    padding: 20px 30px 10px 30px;
-    overflow: hidden; }
-  .entry .example .align-center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  .entry .circle-image.image-br {
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .entry .circle-image.image-cr {
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: center;
+        align-items: center; }
+  .entry .circle-image.image-tr {
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .entry .circle-image.image-cc {
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center; }
+  .entry .circle-image.image-cb {
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .entry .circle-image.image-cu {
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .entry .circle-image.image-lb {
+    -ms-flex-align: end;
+        align-items: flex-end;
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
+  .entry .circle-image.image-lc {
+    -ms-flex-align: center;
+        align-items: center; }
+  .entry .is__highlight {
+    /*display: inline-block;
+		background-color: #fff;
+		padding: 5px 20px;
+		border: 1px solid #8a8a8a;
+		border-radius: 10px;*/
+    display: -ms-inline-flexbox;
+    display: inline-flex; }
+    .entry .is__highlight .highlight-inner {
+      border: 1px solid #d2d2d2;
+      display: inline-block;
+      min-height: 32px;
+      -ms-flex-pack: center;
+          justify-content: center;
+      -ms-flex-align: center;
+          align-items: center;
+      padding: 0 10px;
+      background-color: #fcfcfc;
+      color: #333;
+      margin-bottom: 6px;
+      -webkit-box-shadow: 0px 2px 0 0 #dedede;
+              box-shadow: 0px 2px 0 0 #dedede;
+      border-radius: 4px; }
+      .entry .is__highlight .highlight-inner .MJXc-display {
+        margin: 0.5em; }
+    .entry .is__highlight .MathJax_Display {
+      margin: 0 !important; }
+  .entry .is__highlight.block {
+    display: block;
+    margin: 10px auto;
+    height: auto;
     text-align: center; }
-
-.entry .img-align-center {
-  display: table;
-  margin: 0 auto; }
-
-.entry .img-align-none {
-  display: table; }
-
-.entry .img-align-right {
-  float: right; }
-
-.entry .show-zoom {
-  position: relative;
-  display: block;
-  cursor: pointer; }
-
-.entry .show-zoom:after {
-  position: absolute;
-  content: " ";
-  right: 0;
-  top: 0;
-  background-color: #9d27b0;
-  width: 40px;
-  height: 40px;
-  background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
-  background-size: 30px;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-.entry .solution {
-  padding: 20px 30px 20px 30px;
-  overflow: hidden; }
-
-.entry #img-modal {
-  position: fixed;
-  display: none;
-  justify-items: center;
-  -ms-flex-align: center;
-      align-items: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 999; }
 /**
  * #.# Common SCSS
  *
  * Can include things like variables and mixins
  * that are used across the project.
 */
+p {
+  font-size: 1.1rem; }
+
 .assignment-container h2 {
   position: relative;
   font-weight: 800 !important;

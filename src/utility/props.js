@@ -20,12 +20,4 @@ export default {
 		{label: 'paragraf', value: 'p'},
 		{label: 'tekst', value: 'span'},
 	],
-
-	fractionBrojnik: {
-		type: 'integer',
-	},
-
-	fractionNazivnik: {
-		type: 'integer',
-	}
 }

@@ -9,11 +9,13 @@
  * Webpack is compiling as the input file.
  */
 
-import './kutak/kutak.js';
-import './primjer/primjer.js';
-import './primjer/customBlock.js';
-import './primjer/imageUpload.js';
-import './primjer/components/primjer-text.js';
+// import './kutak/components/kutak.js';
+import './kutak/components/kutak.js';
+
+// import './primjer/primjer.js';
+// import './primjer/customBlock.js';
+// import './primjer/imageUpload.js';
+// import './primjer/components/primjer-text.js';
 
 // import './zadatak/zadatak';
 // import './zadatak/zadatakOld';
@@ -24,5 +26,5 @@ import './primjer/components/primjer-text.js';
 // import './zadatak/components/zadatakText';
 // import './zadatak/components/buttons';
 
-import './fraction/fractionZadatak';
-import './fraction/components/text';
+// import './fraction/fractionZadatak';
+import './utility/components/text.js';

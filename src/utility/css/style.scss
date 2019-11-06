@@ -1,0 +1,26 @@
+.assignment-container {
+	h2 {
+		position: relative;
+		font-weight: 800 !important;
+		color: #555 !important;
+		margin: 0 0 30px 0 !important;
+		padding-top: 0 !important;
+		z-index: 0;
+		font-size: 2.1rem;
+	}
+
+	h2:after {
+		content: " ";
+		background-image: url(/wp-content/themes/kresimira/img/zadatak-svg.svg);
+		position: absolute;
+		width: 228px;
+		height: 43px;
+		top: 24px;
+		left: -14px;
+		z-index: -1;
+	}
+}
+
+.MJXc-display {
+	display: initial !important;
+}

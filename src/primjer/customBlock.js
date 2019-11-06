@@ -3,8 +3,8 @@ import React from 'react';
 import './style.scss';
 import './editor.scss';
 
-import CustomComponent from "../components/CustomComponent";
-import ImageUpload from "../components/upload";
+import CustomComponent from "../utility/components/CustomComponent";
+import ImageUpload from "../utility/components/upload";
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;

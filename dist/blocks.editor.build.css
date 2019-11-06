@@ -4,62 +4,300 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
-.is__widget {
-  position: relative; }
+p {
+  font-size: 1.1rem; }
 
-.kutak {
+/* Kutci */
+.is__widget {
+  position: relative;
+  margin-top: 1rem; }
+
+.is__widget.kutak {
   min-height: 1rem;
   margin: 30px 0 30px 0;
   overflow: hidden; }
-  .kutak p {
-    margin: 0;
-    overflow: visible; }
-  .kutak .widget-inner-title {
-    text-transform: uppercase;
-    padding-right: 23px;
-    font-weight: 800;
-    letter-spacing: .8px;
-    text-align: left;
-    margin-left: 98px;
-    font-size: 1.75rem;
-    display: block;
-    margin-top: -63px; }
-  .kutak .kutak-content {
-    margin-top: 14px;
-    border-left: 4px solid transparent;
-    border-image-slice: 1 !important;
-    padding: 20px 40px !important;
-    padding: 0 40px;
-    padding-top: 30px;
+  .is__widget.kutak > div {
+    padding: 30px 40px 0;
     display: block;
     overflow: auto;
-    opacity: 1;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
+    opacity: 1; }
+  .is__widget.kutak > div ~ h3,
+  .is__widget.kutak > div ~ .widget-inner-title {
+    margin-top: 48px; }
+  .is__widget.kutak .widget-inner-title span {
+    font-size: 1rem !important; }
 
-.kutak.kutak-promislite .widget-inner-title {
-  color: #57c6c5; }
+.is__widget.kutak::before {
+  background-size: 80px 81px; }
 
-.kutak.kutak-promislite .kutak-content {
+.is__widget.kutak > p {
+  margin: 0; }
+
+.is__widget.kutak > div {
+  border-left: 4px solid transparent;
+  border-image-slice: 1 !important;
+  padding: 20px 40px !important; }
+
+.is__widget.kutak.kutak-plus > div {
+  border-left: solid #519de9 4px; }
+
+.is__widget.kutak.kutak-plus::before {
+  background-color: #edf5fc; }
+
+.is__widget.kutak.kutak-iz-zabavne-matematike > div {
+  -webkit-border-image: -webkit-linear-gradient(84deg, #6a11cb, #4a37e0);
+       -o-border-image: -o-linear-gradient(84deg, #6a11cb, #4a37e0);
+          border-image: linear-gradient(6deg, #6a11cb, #4a37e0); }
+
+.is__widget.kutak.kutak-iz-zabavne-matematike::before {
+  background-color: #efeafb; }
+
+.is__widget.kutak.kutak-povijesni-kutak > div {
+  -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#f87d29), to(#f89539));
+  -webkit-border-image: -webkit-linear-gradient(bottom, #f87d29, #f89539);
+       -o-border-image: -o-linear-gradient(bottom, #f87d29, #f89539);
+          border-image: -webkit-gradient(linear, left bottom, left top, from(#f87d29), to(#f89539));
+          border-image: linear-gradient(0deg, #f87d29, #f89539); }
+
+.is__widget.kutak.kutak-povijesni-kutak::before {
+  background-color: #fef3e9; }
+
+.is__widget.kutak.kutak-promislite > div {
   -webkit-border-image: -webkit-linear-gradient(281deg, #84fab0, #71cfe5);
        -o-border-image: -o-linear-gradient(281deg, #84fab0, #71cfe5);
           border-image: linear-gradient(169deg, #84fab0, #71cfe5); }
 
-.kutak.kutak-istrazite .widget-inner-title {
-  color: #ec456c; }
+.is__widget.kutak.kutak-promislite::before {
+  background-color: #f2fef7; }
 
-.kutak.kutak-istrazite .kutak-content {
+.is__widget.kutak.kutak-istrazite > div {
   -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
   -webkit-border-image: -webkit-linear-gradient(bottom, #c8395a, #dc3f64);
        -o-border-image: -o-linear-gradient(bottom, #c8395a, #dc3f64);
           border-image: -webkit-gradient(linear, left bottom, left top, from(#c8395a), to(#dc3f64));
           border-image: linear-gradient(0deg, #c8395a, #dc3f64); }
 
+.is__widget.kutak.kutak-istrazite::before {
+  background-color: #faebee; }
+
+.is__widget.kutak.kutak-bez-rijeci > div {
+  -webkit-border-image: -webkit-linear-gradient(84deg, #11998e, #38ef7d);
+       -o-border-image: -o-linear-gradient(84deg, #11998e, #38ef7d);
+          border-image: linear-gradient(6deg, #11998e, #38ef7d); }
+
+.is__widget.kutak.kutak-bez-rijeci::before {
+  background-color: #e9f9f2; }
+
+.is__widget.kutak[class^="is__widget kutak kutak-pogled-u"]::before {
+  background-image: url(/wp-content/themes/kresimira/img/bez-rijeci-ikona.svg); }
+
+.is__widget.kutak[class^="is__widget kutak kutak-pogled-u"]::before > div {
+  -webkit-border-image: -webkit-gradient(linear, left bottom, left top, from(#11998e), to(#38ef7d));
+  -webkit-border-image: -webkit-linear-gradient(bottom, #11998e, #38ef7d);
+       -o-border-image: -o-linear-gradient(bottom, #11998e, #38ef7d);
+          border-image: -webkit-gradient(linear, left bottom, left top, from(#11998e), to(#38ef7d));
+          border-image: linear-gradient(0deg, #11998e, #38ef7d); }
+
+.is__widget.kutak[class^="is__widget kutak kutak-pogled-u"]::before::before {
+  background-color: #e9f9f2; }
+
+.is__widget.kutak.kutak-promislite .widget-inner-title:first-of-type {
+  color: #57c6c5; }
+
+.is__widget.kutak.kutak-promislite::before {
+  content: ''; }
+
+.is__widget.kutak.kutak-promislite .widget-inner-title {
+  margin-top: -63px; }
+
+.is__widget.kutak.kutak-promislite > div {
+  margin-top: 14px; }
+
+.kutak.kutak-promislite::before {
+  background-image: url(/wp-content/themes/kresimira/img/kutak_promislite.svg); }
+
+.is__widget.kutak.active > div {
+  opacity: 1; }
+
 .kutak::before {
+  background-repeat: no-repeat; }
+
+.kutak .circle-image {
+  background-size: cover; }
+
+.kutak > h3:first-of-type,
+.kutak .widget-inner-title:first-of-type {
   padding-right: 23px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-align: left;
+  text-transform: uppercase;
+  margin-left: 98px;
+  font-size: 1.75rem;
   display: block;
-  font-family: "Open Sans", sans-serif;
+  margin-top: -49px; }
+
+.widget-inner-title {
+  margin-top: -49px; }
+
+.kutak.kutak-istrazite h3:first-of-type,
+.kutak.kutak-istrazite .widget-inner-title:first-of-type {
+  color: #ec456c; }
+
+.kutak.kutak-istrazite .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/istrazite_old.svg); }
+
+.kutak.kutak-istrazite::before {
+  background-image: url(/wp-content/themes/kresimira/img/istrazite.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-povijesni-kutak h3:first-of-type,
+.kutak.kutak-povijesni-kutak .widget-inner-title:first-of-type {
+  color: #a05a33; }
+
+.kutak.kutak-povijesni-kutak .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/povijesni.svg); }
+
+.kutak.kutak-povijesni-kutak::before {
+  background-image: url(/wp-content/themes/kresimira/img/8-a-povijesni-kutak-square.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-bez-rijeci h3:first-of-type,
+.kutak.kutak-bez-rijeci .widget-inner-title:first-of-type {
+  color: #1cb189; }
+
+.kutak.kutak-bez-rijeci .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
+
+.kutak.kutak-bez-rijeci::before {
+  background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-iz-zabavne-matematike h3:first-of-type,
+.kutak.kutak-iz-zabavne-matematike .widget-inner-title:first-of-type {
+  color: #0d67c1; }
+
+.kutak.kutak-iz-zabavne-matematike .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/iz-zabavne-matematike_old.svg); }
+
+.kutak.kutak-iz-zabavne-matematike::before {
+  background-image: url(/wp-content/themes/kresimira/img/iz-zabavne-matematike.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-za-radoznale h3:first-of-type,
+.kutak.kutak-za-radoznale .widget-inner-title:first-of-type {
+  color: #44a15d; }
+
+.kutak.kutak-za-radoznale .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/za-radoznale.svg); }
+
+.kutak.kutak-za-radoznale::before {
+  background-image: url(/wp-content/themes/kresimira/img/za-radoznale-ikona.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-plus > h3:first-of-type,
+.kutak.kutak-plus .widget-inner-title:first-of-type {
+  color: #0089bf; }
+
+.kutak.kutak-plus .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/kutak-plus.svg); }
+
+.kutak.kutak-plus::before {
+  background-image: url(/wp-content/themes/kresimira/img/6-a-kutak-plus-square.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-sazetak h3:first-of-type,
+.kutak.kutak-sazetak .widget-inner-title:first-of-type {
+  color: #148278; }
+
+.kutak.kutak-sazetak .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/sazetak.svg); }
+
+.kutak.kutak-sazetak::before {
+  background-image: url(/wp-content/themes/kresimira/img/sazetak-ikona.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-napomena h3:first-of-type,
+.kutak.kutak-napomena .widget-inner-title:first-of-type {
+  color: #148278; }
+
+.kutak.kutak-napomena .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/napomena.svg); }
+
+.kutak.kutak-napomena::before {
+  background-image: url(/wp-content/themes/kresimira/img/napomena-ikona.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-kljucni-pojmovi h3:first-of-type,
+.kutak.kutak-kljucni-pojmovi .widget-inner-title:first-of-type {
+  color: #26a69a; }
+
+.kutak.kutak-kljucni-pojmovi .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/kljucni-pojmovi.svg); }
+
+.kutak.kutak-kljucni-pojmovi::before {
+  background-image: url(/wp-content/themes/kresimira/img/kljucni-pojmovi-ikona.svg); }
+
+/***
+   *
+   */
+.kutak[class^="kutak-pogled-u"] h3:first-of-type,
+.kutak[class^="kutak-pogled-u"] .widget-inner-title:first-of-type {
+  color: #813d85; }
+
+.kutak[class^="kutak-pogled-u"] .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
+
+.kutak[class^="kutak-pogled-u"]::before {
+  background-image: url(/wp-content/themes/kresimira/img/bez-rijeci-ikona.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-pokus h3:first-of-type,
+.kutak.kutak-pokus .widget-inner-title:first-of-type {
+  color: #4f56c9; }
+
+.kutak.kutak-pokus .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/pokus.svg); }
+
+.kutak.kutak-pokus::before {
+  background-image: url(/wp-content/themes/kresimira/img/pokus-ikona.svg); }
+
+/***
+   *
+   */
+.kutak.kutak-zanimljivost h3:first-of-type,
+.kutak.kutak-zanimljivost .widget-inner-title:first-of-type {
+  color: #ad1457; }
+
+.kutak.kutak-zanimljivost .circle-image {
+  background-image: url(/wp-content/themes/kresimira/img/zanimljivost.svg); }
+
+.kutak.kutak-zanimljivost::before {
+  background-image: url(/wp-content/themes/kresimira/img/zanimljivost-ikona.svg); }
+
+.is__widget.kutak::before {
+  padding-right: 23px;
+  content: attr(data-title);
+  display: block;
+  font-family: 'Open Sans', sans-serif;
   font-size: 12px;
   font-weight: 600;
   font-style: normal;
@@ -71,116 +309,142 @@
   height: 80px;
   z-index: 1;
   padding-top: 14px;
-  padding-left: 97px;
-  background-repeat: no-repeat;
-  background-size: 80px 81px; }
+  padding-left: 97px; }
 
-.kutak-promislite::before {
-  content: '';
-  background-color: #f2fef7;
-  background-image: url(/wp-content/themes/kresimira/img/kutak_promislite.svg); }
+.is__widget.kutak img {
+  border-radius: 2px; }
 
-.kutak-istrazite::before {
-  content: '';
-  background-color: #faebee;
-  background-image: url(/wp-content/themes/kresimira/img/istrazite.svg); }
+.circle-image {
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
+  height: 400px;
+  float: left;
+  border-radius: 50%; }
+  .circle-image img {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    -webkit-box-shadow: -30px 26px 58px 0 rgba(0, 0, 0, 0.5) !important;
+            box-shadow: -30px 26px 58px 0 rgba(0, 0, 0, 0.5) !important;
+    border-radius: 10px; }
 
-.editor-styles-wrapper p {
-  margin-top: -1px !important;
-  margin-bottom: -1px !important; }
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-/**
- * #.# Common SCSS
- *
- * Can include things like variables and mixins
- * that are used across the project.
-*/
-.example {
-  overflow: visible;
-  background-size: contain;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position-y: 0;
-  padding-top: 20px;
-  margin-bottom: 30px;
-  border-top: 4px solid #f01260;
-  border-bottom: 4px solid #c24894;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 39px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 39px 0 rgba(0, 0, 0, 0.1); }
-  .example .assignment-title {
-    font-size: 1.75rem;
-    font-weight: 800;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #e02473;
-    max-width: 512px;
-    width: 100%;
-    height: 92px;
-    display: -ms-flexbox;
-    display: flex;
+@media screen and (max-width: 576px) {
+  .circle-image {
+    width: 280px;
+    height: 280px;
+    float: none !important;
+    border-radius: 10000px; }
+    .circle-image .left {
+      float: none !important; }
+    .circle-image .alignleft {
+      float: none !important; }
+    .circle-image img {
+      max-width: 300px;
+      height: auto; }
+  .is__widget.kutak > div {
+    padding: 20px 10px !important; } }
+
+.circle-image.left {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 30px; }
+
+.circle-image.right {
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 30px; }
+
+.circle-image.center {
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+
+.circle-image.image-br {
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+.circle-image.image-cr {
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.circle-image.image-tr {
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.circle-image.image-cc {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
+
+.circle-image.image-cb {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: end;
+      align-items: flex-end; }
+
+.circle-image.image-cu {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.circle-image.image-lb {
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
+
+.circle-image.image-lc {
+  -ms-flex-align: center;
+      align-items: center; }
+
+.is__highlight {
+  /*display: inline-block;
+	  background-color: #fff;
+	  padding: 5px 20px;
+	  border: 1px solid #8a8a8a;
+	  border-radius: 10px;*/
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+  .is__highlight .highlight-inner {
+    border: 1px solid #d2d2d2;
+    display: inline-block;
+    min-height: 32px;
+    -ms-flex-pack: center;
+        justify-content: center;
     -ms-flex-align: center;
         align-items: center;
-    position: relative;
-    padding: 0 20px 0 100px; }
-  .example .assignment-title::before {
-    content: '';
-    margin-left: 10px;
-    width: 75px;
-    height: 75px;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    background-image: url(/wp-content/themes/kresimira/img/primjer_ikona.svg); }
-  .example .example-text {
-    padding: 20px 30px 10px 30px;
-    overflow: hidden; }
+    padding: 0 10px;
+    background-color: #fcfcfc;
+    color: #333;
+    margin-bottom: 6px;
+    -webkit-box-shadow: 0px 2px 0 0 #dedede;
+            box-shadow: 0px 2px 0 0 #dedede;
+    border-radius: 4px; }
+    .is__highlight .highlight-inner .MJXc-display {
+      margin: 0.5em; }
+  .is__highlight .MathJax_Display {
+    margin: 0 !important; }
 
-.img-align-center {
-  display: table;
-  margin: 0 auto; }
-
-.img-align-none {
-  display: table; }
-
-.img-align-right {
-  float: right;
-  display: inline-block; }
-
-.show-zoom {
-  position: relative;
+.is__highlight.block {
   display: block;
-  cursor: pointer; }
-
-.show-zoom:after {
-  position: absolute;
-  content: " ";
-  right: 0;
-  top: 0;
-  background-color: #9d27b0;
-  width: 40px;
-  height: 40px;
-  background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
-  background-size: 30px;
-  background-position: center;
-  background-repeat: no-repeat; }
-
-.solution {
-  padding: 20px 30px 20px 30px;
-  overflow: hidden; }
+  margin: 10px auto;
+  height: auto;
+  text-align: center; }
 /**
  * #.# Common SCSS
  *
  * Can include things like variables and mixins
  * that are used across the project.
 */
+p {
+  font-size: 1.1rem; }

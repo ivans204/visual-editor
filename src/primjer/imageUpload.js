@@ -177,8 +177,8 @@ registerBlockType('visual-editor/upload', {
 	},
 
 	save: function (props) {
-		const {attributes, setAttributes} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlignment, showZoom, showModal} = attributes;
+		const {attributes} = props;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment, showZoom} = attributes;
 
 		return (
 			<Fragment>
@@ -203,7 +203,6 @@ registerBlockType('visual-editor/upload', {
 						className={imgAlignment}
 					/>
 				</div>
-
 			</Fragment>
 		);
 	}

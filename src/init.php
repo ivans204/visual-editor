@@ -92,6 +92,10 @@ function custom_new_category($categories, $post)
 			array(
 				'slug' => 'razlomak',
 				'title' => __('Razlomak'),
+			),
+			array(
+				'slug' => 'utility',
+				'title' => __('Utility'),
 			)
 		)
 	);
@@ -100,3 +104,21 @@ function custom_new_category($categories, $post)
 // Hook: Block assets.
 add_action('init', 'visual_editor_cgb_block_assets');
 add_filter('block_categories', 'custom_new_category', 10, 2);
+
+function allowed_blocks($allowed_blocks)
+{
+	return array(
+		'visual-editor/fraction',
+		'visual-editor/fraction-input',
+		'visual-editor/kutak',
+		'visual-editor/kutak-old',
+		'visual-editor/text',
+		'visual-editor/zadatak-buttons',
+		'visual-editor/fraction-form',
+		'visual-editor/fraction-input',
+		'visual-editor/single-input',
+		'core/image',
+	);
+}
+
+add_filter('allowed_block_types', 'allowed_blocks');
