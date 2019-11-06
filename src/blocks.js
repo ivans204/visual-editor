@@ -9,12 +9,12 @@
  * Webpack is compiling as the input file.
  */
 
-// import './kutak/components/kutak.js';
 import './kutak/components/kutak.js';
+import './kutak/components/kutakImg.js';
 
 // import './primjer/primjer.js';
 // import './primjer/customBlock.js';
-// import './primjer/imageUpload.js';
+import './primjer/imageUpload.js';
 // import './primjer/components/primjer-text.js';
 
 // import './zadatak/zadatak';

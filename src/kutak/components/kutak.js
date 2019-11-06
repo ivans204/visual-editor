@@ -3,7 +3,6 @@ import '../css/style.scss';
 import '../css/editor.scss';
 
 import kutakProps from '../props';
-
 const {kutakOptions, kutakAllowedBlocks} = kutakProps;
 
 const {__} = wp.i18n;
@@ -15,7 +14,7 @@ const {Fragment} = wp.element;
 registerBlockType('visual-editor/kutak', {
 	title: __('Kutak'),
 	icon: 'welcome-learn-more',
-	category: 'common',
+	category: 'kutak',
 	attributes: kutakProps,
 
 	edit: function (props) {

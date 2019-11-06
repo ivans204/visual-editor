@@ -5,22 +5,8 @@ import './editor.scss';
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
-
-const {
-	RichText,
-	MediaUpload,
-	InspectorControls,
-} = wp.blockEditor;
-
-const {
-	Button,
-	IconButton,
-	PanelBody,
-	TextControl,
-	ButtonGroup,
-	CheckboxControl
-} = wp.components;
-
+const {MediaUpload, InspectorControls,} = wp.blockEditor;
+const {IconButton, PanelBody, TextControl, ButtonGroup, CheckboxControl} = wp.components;
 const {Fragment} = wp.element;
 
 let test = false;
@@ -65,8 +51,8 @@ registerBlockType('visual-editor/upload', {
 	},
 
 	edit: function (props) {
-		const {attributes, setAttributes, className} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlignment, imgZoomCheck, showZoom, showModal} = attributes;
+		const {attributes, setAttributes} = props;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment, imgZoomCheck, showZoom} = attributes;
 
 		function selectImage(value) {
 			setAttributes({
@@ -178,7 +164,7 @@ registerBlockType('visual-editor/upload', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlignment, showZoom} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlignment} = attributes;
 
 		return (
 			<Fragment>

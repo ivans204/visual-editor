@@ -96,6 +96,10 @@ function custom_new_category($categories, $post)
 			array(
 				'slug' => 'utility',
 				'title' => __('Utility'),
+			),
+			array(
+				'slug' => 'kutak',
+				'title' => __('Kutak'),
 			)
 		)
 	);
@@ -111,13 +115,14 @@ function allowed_blocks($allowed_blocks)
 		'visual-editor/fraction',
 		'visual-editor/fraction-input',
 		'visual-editor/kutak',
-		'visual-editor/kutak-old',
+		'visual-editor/kutak-img',
+//		'visual-editor/upload',
 		'visual-editor/text',
 		'visual-editor/zadatak-buttons',
 		'visual-editor/fraction-form',
 		'visual-editor/fraction-input',
 		'visual-editor/single-input',
-		'core/image',
+//		'core/image',
 	);
 }
 
