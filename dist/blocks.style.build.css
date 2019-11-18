@@ -4,8 +4,11 @@
  * Can include things like variables and mixins
  * that are used across the project.
 */
+body {
+  font-family: "Open Sans", sans-serif; }
+
 p {
-  font-size: 1.1rem; }
+  font-size: 1.2rem; }
 
 .entry {
   /***
@@ -364,8 +367,11 @@ p {
  * Can include things like variables and mixins
  * that are used across the project.
 */
+body {
+  font-family: "Open Sans", sans-serif; }
+
 p {
-  font-size: 1.1rem; }
+  font-size: 1.2rem; }
 
 /**
  * #.# Common SCSS
@@ -373,8 +379,11 @@ p {
  * Can include things like variables and mixins
  * that are used across the project.
 */
+body {
+  font-family: "Open Sans", sans-serif; }
+
 p {
-  font-size: 1.1rem; }
+  font-size: 1.2rem; }
 
 .entry .example {
   overflow: visible;
@@ -475,8 +484,11 @@ p {
  * Can include things like variables and mixins
  * that are used across the project.
 */
+body {
+  font-family: "Open Sans", sans-serif; }
+
 p {
-  font-size: 1.1rem; }
+  font-size: 1.2rem; }
 
 .assignment-container h2 {
   position: relative;

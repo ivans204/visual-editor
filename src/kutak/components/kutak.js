@@ -24,7 +24,7 @@ registerBlockType('visual-editor/kutak', {
 		function selectedKutak(kutak) {
 			setAttributes({
 				kutakSelected: kutak,
-			})
+			});
 		}
 
 		return (
@@ -36,9 +36,9 @@ registerBlockType('visual-editor/kutak', {
 					>
 						<SelectControl
 							label={__('Odaberi kutak')}
-							value={kutakSelected}
 							options={kutakOptions}
 							onChange={selectedKutak}
+							value={kutakSelected}
 						/>
 					</PanelBody>
 				</InspectorControls>
@@ -60,6 +60,7 @@ registerBlockType('visual-editor/kutak', {
 	save: function (props) {
 		const {attributes} = props;
 		const {kutakSelected} = attributes;
+
 		return (
 			<div className="container">
 				<div className="row">

@@ -3,32 +3,29 @@ export default {
 	 * Kutak
 	 */
 	kutakOptions: [
-		{label: 'Promislite', value: 0, kutakClass: 'promislite'},
-		{label: 'Istrazite', value: 1, kutakClass: 'istrazite'},
-		{label: 'Kutak plus', value: 2, kutakClass: 'plus'},
-		{label: 'Kutak iz zabavne matematike', value: 3, kutakClass: 'iz-zabavne-matematike'},
-		{label: 'Povijesni kutak', value: 4, kutakClass: 'povijesni-kutak'},
-		{label: 'Bez riječi', value: 5, kutakClass: 'bez-rijeci'},
-		{label: 'Zanimljivost', value: 6, kutakClass: 'zanimljivost'},
-		{label: 'Pokus', value: 7, kutakClass: 'pokus'},
-		{label: 'Ključni pojmovi', value: 8, kutakClass: 'kljucni-pojmovi'},
-		{label: 'Napomena', value: 9, kutakClass: 'napomena'},
-		{label: 'Sažetak', value: 10, kutakClass: 'sazetak'},
-		{label: 'Za radoznale', value: 11, kutakClass: 'za-radoznale'},
+		{value: 0, label: 'Promislite', kutakClass: 'promislite'},
+		{value: 1, label: 'Istrazite', kutakClass: 'istrazite'},
+		{value: 2, label: 'Kutak plus', kutakClass: 'plus'},
+		{value: 3, label: 'Kutak iz zabavne matematike', kutakClass: 'iz-zabavne-matematike'},
+		{value: 4, label: 'Povijesni kutak', kutakClass: 'povijesni-kutak'},
+		{value: 5, label: 'Bez riječi', kutakClass: 'bez-rijeci'},
+		{value: 6, label: 'Zanimljivost', kutakClass: 'zanimljivost'},
+		{value: 7, label: 'Pokus', kutakClass: 'pokus'},
+		{value: 8, label: 'Ključni pojmovi', kutakClass: 'kljucni-pojmovi'},
+		{value: 9, label: 'Napomena', kutakClass: 'napomena'},
+		{value: 10, label: 'Sažetak', kutakClass: 'sazetak'},
+		{value: 11, label: 'Za radoznale', kutakClass: 'za-radoznale'},
 	],
 
 	kutakAllowedBlocks: ['visual-editor/text', 'visual-editor/kutak-img', 'core/image'],
 
 	kutakSelected: {
-		type: 'number',
-		value: 0,
 		default: 0,
 	},
 
 	/**
 	 * Kutak slika
 	 */
-
 	imgUrl: {
 		type: 'string',
 		default: 'http://placehold.it/300',
@@ -36,12 +33,12 @@ export default {
 
 	imgWidth: {
 		type: 'number',
-		default: 400,
+		default: 300,
 	},
 
 	imgHeight: {
 		type: 'number',
-		default: 400,
+		default: 300,
 	},
 
 }

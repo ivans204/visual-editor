@@ -105,7 +105,7 @@ registerBlockType('visual-editor/kutak-img', {
 
 		return (
 			<div>
-				<div className={'circle-image left alignleft image-cc'}>
+				<div className={`circle-image left alignleft image-cc`}>
 					<img src={imgUrl} alt="Slika" width={imgWidth} height={imgHeight}/>
 				</div>
 			</div>
