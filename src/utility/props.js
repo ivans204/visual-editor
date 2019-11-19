@@ -16,7 +16,7 @@ export default {
 	},
 
 	textOptions: [
-		{label: 'naslov', value: 'h2'},
+		{label: 'podnaslov', value: 'h2'},
 		{label: 'paragraf', value: 'p'},
 		{label: 'tekst', value: 'span'},
 	],

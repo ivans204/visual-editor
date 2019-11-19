@@ -48,7 +48,7 @@ registerBlockType('visual-editor/kutak', {
 					<p>
 						<span className='widget-inner-title'>{kutakOptions[kutakSelected].label}</span>
 					</p>
-					<div>
+					<div className='kutak-elements'>
 						<InnerBlocks allowedBlocks={kutakAllowedBlocks}/>
 					</div>
 				</div>

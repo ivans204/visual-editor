@@ -1,30 +1,13 @@
 import React from 'react';
-
 import '../css/style.scss';
 import '../css/editor.scss';
-
 import kutakProps from '../props';
 
 const {} = kutakProps;
-
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
-
-const {
-	RichText,
-	MediaUpload,
-	InspectorControls,
-} = wp.blockEditor;
-
-const {
-	Button,
-	IconButton,
-	PanelBody,
-	TextControl,
-	ButtonGroup,
-	CheckboxControl
-} = wp.components;
-
+const {MediaUpload, InspectorControls, BlockControls, AlignmentToolbar,} = wp.blockEditor;
+const {PanelBody, TextControl, FormToggle} = wp.components;
 const {Fragment} = wp.element;
 
 registerBlockType('visual-editor/kutak-img', {
@@ -35,49 +18,31 @@ registerBlockType('visual-editor/kutak-img', {
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {imgUrl, imgWidth, imgHeight} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlign, kutakBlueCircle} = attributes;
 
 		function selectImg(url) {
-			setAttributes({
-				imgUrl: url.url,
-			});
+			setAttributes({imgUrl: url.url,});
 		}
-
 		function changeImgWidth(width) {
-			setAttributes({
-				imgWidth: width,
-			});
+			setAttributes({imgWidth: width,});
 		}
-
 		function changeImgHeight(height) {
-			setAttributes({
-				imgHeight: height,
-			});
+			setAttributes({imgHeight: height,});
 		}
-
-		function ImgUpload() {
-			return (
-				<MediaUpload
-					onSelect={selectImg}
-					render={({open}) => {
-						return (
-							<img
-								alt=''
-								src={imgUrl}
-								width={imgWidth}
-								height={imgHeight}
-								onDoubleClick={open}
-							/>
-						);
-					}}
-				/>
-			);
+		function setImgAlign(align) {
+			setAttributes({imgAlign: align,});
+		}
+		function blueCircle() {
+			setAttributes({kutakBlueCircle: !kutakBlueCircle,});
 		}
 
 		return (
 			<Fragment>
 				<InspectorControls>
-					<PanelBody title={__('Slika')}>
+					<PanelBody
+						title={__('Slika')}
+						initialOpen={true}
+					>
 						<TextControl
 							label={__('Širina: ')}
 							type='number'
@@ -91,9 +56,37 @@ registerBlockType('visual-editor/kutak-img', {
 							onChange={changeImgHeight}
 						/>
 					</PanelBody>
+					<PanelBody
+						title={__('Kutak plus plavi krug')}
+						initialOpen={false}
+					>
+						<FormToggle checked={kutakBlueCircle} onChange={blueCircle}/>
+					</PanelBody>
 				</InspectorControls>
+
+				<BlockControls>
+					<AlignmentToolbar
+						value={imgAlign}
+						onChange={setImgAlign}
+					/>
+				</BlockControls>
+
 				<div>
-					<ImgUpload/>
+					<MediaUpload
+						onSelect={selectImg}
+						render={({open}) => {
+							return (
+								<img
+									className={`${imgAlign} align${imgAlign} ${kutakBlueCircle ? 'circle-image image-cc' : ''}`}
+									alt='kutna slika'
+									src={imgUrl}
+									width={imgWidth}
+									height={imgHeight}
+									onDoubleClick={open}
+								/>
+							);
+						}}
+					/>
 				</div>
 			</Fragment>
 		);
@@ -101,11 +94,11 @@ registerBlockType('visual-editor/kutak-img', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {imgUrl, imgWidth, imgHeight} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlign, kutakBlueCircle} = attributes;
 
 		return (
 			<div>
-				<div className={`circle-image left alignleft image-cc`}>
+				<div className={`${imgAlign} align${imgAlign} ${kutakBlueCircle ? 'circle-image image-cc' : ''}`}>
 					<img src={imgUrl} alt="Slika" width={imgWidth} height={imgHeight}/>
 				</div>
 			</div>

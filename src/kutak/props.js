@@ -27,18 +27,22 @@ export default {
 	 * Kutak slika
 	 */
 	imgUrl: {
-		type: 'string',
 		default: 'http://placehold.it/300',
 	},
 
 	imgWidth: {
-		type: 'number',
-		default: 300,
+		default: 250,
 	},
 
 	imgHeight: {
-		type: 'number',
-		default: 300,
+		default: 250,
 	},
 
+	imgAlign: {
+		default: 'none',
+	},
+
+	kutakBlueCircle: {
+		default: false,
+	}
 }

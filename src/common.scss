@@ -17,5 +17,43 @@ body {
 }
 
 p {
-	font-size: 1.2rem;
+	font-size: 1.1rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+.alignleft {
+	float: left;
+	margin: 8px 20px 0 0;
+	display: inline;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 10px 10px;
+	display: inline;
+}
+
+.aligncenter {
+	img {
+		clear: both;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+.single-lekcija {
+	.lecture-section {
+		h2 {
+			color: #2395ee;
+			font-weight: 800;
+			padding-top: 80px;
+			margin-top: 0;
+			margin-bottom: 60px;
+
+		}
+	}
 }
