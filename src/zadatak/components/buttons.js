@@ -39,18 +39,14 @@ registerBlockType('visual-editor/zadatak-buttons', {
 		const {zadatakAnswer, zadatakHint} = attributes;
 
 		function setZadatakAnswer(newAnsw) {
-			setAttributes({
-				zadatakAnswer: newAnsw,
-			})
+			setAttributes({zadatakAnswer: newAnsw,})
 		}
 
 		function setZadatakHint(newAnsw) {
-			setAttributes({
-				zadatakHint: newAnsw,
-			})
+			setAttributes({zadatakHint: newAnsw,})
 		}
 
-		function showAnswer() {
+		function ShowAnswer() {
 			if (zadatakAnswer && zadatakAnswer.length) {
 				return (
 					<Button title={__('Prikaži rješenje')} className={`a-btn answer-solution`}>
@@ -60,7 +56,7 @@ registerBlockType('visual-editor/zadatak-buttons', {
 			}
 		}
 
-		function showHint() {
+		function ShowHint() {
 			if (zadatakHint && zadatakHint.length) {
 				return (
 					<Button title="Pomoć" className={`a-btn answer-hint`}>
@@ -102,9 +98,9 @@ registerBlockType('visual-editor/zadatak-buttons', {
 				<div className='button-holder'>
 					<Button className='answer-check a-btn'>Provjeri</Button>
 					<div className='assignment-container-options'>
-
-						{showHint()}
-						{showAnswer()}
+						
+						<ShowHint/>
+						<ShowAnswer/>
 
 						<Button title={__('Ponovi zadatak')} className={`a-btn answer-reset`}>
 							<img src="/wp-content/themes/kresimira/img/refresh.svg" alt=""/>

@@ -38,9 +38,7 @@ registerBlockType('visual-editor/zadatak', {
 		const {zadatakTitle} = attributes;
 
 		function onChangeZadatakTitle(newTitle) {
-			setAttributes({
-				zadatakTitle: newTitle,
-			})
+			setAttributes({zadatakTitle: newTitle,})
 		}
 
 		return (

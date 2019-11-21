@@ -32,15 +32,10 @@ registerBlockType('visual-editor/text', {
 		const {textType, textContent} = attributes;
 
 		function onTextTypeChange(type) {
-			setAttributes({
-				textType: type,
-			});
+			setAttributes({textType: type,});
 		}
-
 		function onTextChange(text) {
-			setAttributes({
-				textContent: text,
-			});
+			setAttributes({textContent: text,});
 		}
 
 		function typeOfText() {

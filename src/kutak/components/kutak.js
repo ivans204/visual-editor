@@ -3,6 +3,7 @@ import '../css/style.scss';
 import '../css/editor.scss';
 
 import kutakProps from '../props';
+
 const {kutakOptions, kutakAllowedBlocks} = kutakProps;
 
 const {__} = wp.i18n;
@@ -22,9 +23,7 @@ registerBlockType('visual-editor/kutak', {
 		const {kutakSelected} = attributes;
 
 		function selectedKutak(kutak) {
-			setAttributes({
-				kutakSelected: kutak,
-			});
+			setAttributes({kutakSelected: kutak,});
 		}
 
 		return (
