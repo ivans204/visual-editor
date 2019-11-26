@@ -20,4 +20,27 @@ export default {
 		{label: 'paragraf', value: 'p'},
 		{label: 'tekst', value: 'span'},
 	],
+
+	/**
+	 * Image Upload
+	 */
+
+	imgUrl: {
+		default: 'http://placehold.it/300',
+	},
+
+	imgWidth: {
+		default: 250,
+	},
+
+	imgHeight: {
+		default: 250,
+	},
+
+	imgAlign: {
+		default: 'center',
+	},
+	imgZoom: {
+		default: false,
+	}
 }

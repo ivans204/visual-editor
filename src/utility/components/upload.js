@@ -30,7 +30,6 @@ ImageUpload.View = (props) => {
 	return (
 		<div>
 			<img src={props.url} alt=""/>
-			{console.log(props)}
 		</div>
 	)
 };

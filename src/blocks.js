@@ -28,3 +28,4 @@ import './primjer/imageUpload.js';
 
 // import './fraction/fractionZadatak';
 import './utility/components/text.js';
+import './utility/components/imageUpload.js';

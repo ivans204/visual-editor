@@ -116,13 +116,12 @@ function allowed_blocks($allowed_blocks)
 		'visual-editor/fraction-input',
 		'visual-editor/kutak',
 		'visual-editor/kutak-img',
-//		'visual-editor/upload',
 		'visual-editor/text',
 		'visual-editor/zadatak-buttons',
 		'visual-editor/fraction-form',
 		'visual-editor/fraction-input',
 		'visual-editor/single-input',
-//		'core/image',
+		'visual-editor/img-upload',
 	);
 }
 

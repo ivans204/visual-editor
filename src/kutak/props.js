@@ -17,7 +17,7 @@ export default {
 		{value: 11, label: 'Za radoznale', kutakClass: 'za-radoznale'},
 	],
 
-	kutakAllowedBlocks: ['visual-editor/text', 'visual-editor/kutak-img', 'core/image'],
+	kutakAllowedBlocks: ['visual-editor/text', 'visual-editor/img-upload',],
 
 	kutakSelected: {
 		default: 0,
