@@ -16,9 +16,10 @@ export default {
 	},
 
 	textOptions: [
-		{label: 'podnaslov', value: 'h2'},
-		{label: 'paragraf', value: 'p'},
-		{label: 'tekst', value: 'span'},
+		{label: 'Podnaslov', value: 'h2'},
+		{label: 'Primjer podnaslov', value: 'h3'},
+		{label: 'Paragraf', value: 'p'},
+		{label: 'Tekst', value: 'span'},
 	],
 
 	/**

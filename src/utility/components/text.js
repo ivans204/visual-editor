@@ -34,19 +34,9 @@ registerBlockType('visual-editor/text', {
 		function onTextTypeChange(type) {
 			setAttributes({textType: type,});
 		}
+
 		function onTextChange(text) {
 			setAttributes({textContent: text,});
-		}
-
-		function typeOfText() {
-			return (
-				<RichText
-					tagName={textType}
-					value={textContent}
-					onChange={onTextChange}
-					placeholder={__('Unesi tekst')}
-				/>
-			)
 		}
 
 		return (
@@ -65,9 +55,14 @@ registerBlockType('visual-editor/text', {
 						/>
 					</PanelBody>
 				</InspectorControls>
-				{
-					typeOfText()
-				}
+
+				<RichText
+					tagName={textType}
+					value={textContent}
+					className={textType}
+					onChange={onTextChange}
+					placeholder={__('Unesi tekst')}
+				/>
 			</Fragment>
 		);
 	},
@@ -80,6 +75,7 @@ registerBlockType('visual-editor/text', {
 			<RichText.Content
 				tagName={textType}
 				value={textContent}
+				calssName={textType}
 			/>
 		);
 	}

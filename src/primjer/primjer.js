@@ -1,73 +1,42 @@
 import React from 'react';
+import './css/style.scss';
+import './css/editor.scss';
+import primjerProps from './props'
 
-import './style.scss';
-import './editor.scss';
+const {primjerAllowedBlocks} = primjerProps;
 
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
-
-const {
-	RichText,
-	RichTextToolbarButton,
-	BlockAlignmentToolbar,
-	InnerBlocks,
-	BlockControls,
-} = wp.blockEditor;
-
-const {
-	FormToggle,
-} = wp.components;
-
+const {InnerBlocks, RichText} = wp.blockEditor;
 const {Fragment} = wp.element;
-
-const allowed_blocks = [
-	'visual-editor/primjer-text',
-	'visual-editor/primjer-solution',
-	'core/image',
-	'core/video',
-	'visual-editor/primjer-text-center',
-	'visual-editor/example-image',
-	'visual-editor/upload',
-];
 
 registerBlockType('visual-editor/primjer', {
 	title: __('primjer'),
 	icon: 'edit',
 	category: 'primjer',
-	attributes: {
-		exampleTitle: {
-			type: 'string',
-		},
-	},
+	attributes: primjerProps,
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {exampleTitle} = attributes;
+		const {primjerSubtitleContent} = attributes;
 
-		function onExampleTitleChange(newTitle) {
-			setAttributes({
-				exampleTitle: newTitle,
-			});
+		function onSubtitleContentChange(content) {
+			setAttributes({primjerSubtitleContent: content,})
 		}
 
 		return (
 			<Fragment>
-				<div className='container'>
-					<div className='row'>
+				<div className="container">
+					<div className="row">
 						<div className="col">
 							<div className='is__widget example example-boxed'>
 								<RichText
 									tagName='h3'
+									value={ primjerSubtitleContent}
+									onChange={onSubtitleContentChange}
 									className='assignment-title'
-									value={exampleTitle}
-									onChange={onExampleTitleChange}
-									placeholder={__('Naslov primjera')}
 								/>
-
-								<InnerBlocks
-									allowedBlocks={allowed_blocks}
-								/>
-
+								<InnerBlocks allowedBlocks={primjerAllowedBlocks}/>
 							</div>
 						</div>
 					</div>
@@ -78,17 +47,17 @@ registerBlockType('visual-editor/primjer', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {exampleTitle,} = attributes;
+		const {primjerSubtitleContent} = attributes;
 
 		return (
-			<div className='container'>
-				<div className='row'>
+			<div className="container">
+				<div className="row">
 					<div className="col">
 						<div className='is__widget example example-boxed'>
 							<RichText.Content
 								tagName='h3'
+								value={primjerSubtitleContent}
 								className='assignment-title'
-								value={exampleTitle}
 							/>
 							<InnerBlocks.Content/>
 						</div>

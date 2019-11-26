@@ -122,6 +122,7 @@ function allowed_blocks($allowed_blocks)
 		'visual-editor/fraction-input',
 		'visual-editor/single-input',
 		'visual-editor/img-upload',
+		'visual-editor/primjer',
 	);
 }
 
