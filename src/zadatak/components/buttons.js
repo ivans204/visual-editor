@@ -98,7 +98,7 @@ registerBlockType('visual-editor/zadatak-buttons', {
 				<div className='button-holder'>
 					<Button className='answer-check a-btn'>Provjeri</Button>
 					<div className='assignment-container-options'>
-						
+
 						<ShowHint/>
 						<ShowAnswer/>
 
@@ -164,10 +164,8 @@ registerBlockType('visual-editor/zadatak-buttons', {
 			<div className='button-holder'>
 				<Button className='answer-check a-btn'>Provjeri</Button>
 				<div className='assignment-container-options'>
-
 					<ButtonHint/>
 					<ButtonAnswer/>
-
 					<Button title={__('Ponovi zadatak')} className={`a-btn answer-reset`}>
 						<img src="/wp-content/themes/kresimira/img/refresh.svg" alt=""/>
 					</Button>

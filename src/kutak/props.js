@@ -41,8 +41,4 @@ export default {
 	imgAlign: {
 		default: 'none',
 	},
-
-	kutakBlueCircle: {
-		default: false,
-	}
 }

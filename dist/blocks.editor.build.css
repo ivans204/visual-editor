@@ -180,8 +180,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/istrazite.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-povijesni-kutak h3:first-of-type,
 .kutak.kutak-povijesni-kutak .widget-inner-title:first-of-type {
   color: #a05a33; }
@@ -193,8 +193,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/8-a-povijesni-kutak-square.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-bez-rijeci h3:first-of-type,
 .kutak.kutak-bez-rijeci .widget-inner-title:first-of-type {
   color: #1cb189; }
@@ -206,8 +206,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/bez-rijeci.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-iz-zabavne-matematike h3:first-of-type,
 .kutak.kutak-iz-zabavne-matematike .widget-inner-title:first-of-type {
   color: #0d67c1; }
@@ -219,8 +219,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/iz-zabavne-matematike.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-za-radoznale h3:first-of-type,
 .kutak.kutak-za-radoznale .widget-inner-title:first-of-type {
   color: #44a15d; }
@@ -232,8 +232,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/za-radoznale-ikona.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-plus > h3:first-of-type,
 .kutak.kutak-plus .widget-inner-title:first-of-type {
   color: #0089bf; }
@@ -245,8 +245,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/6-a-kutak-plus-square.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-sazetak h3:first-of-type,
 .kutak.kutak-sazetak .widget-inner-title:first-of-type {
   color: #148278; }
@@ -258,8 +258,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/sazetak-ikona.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-napomena h3:first-of-type,
 .kutak.kutak-napomena .widget-inner-title:first-of-type {
   color: #148278; }
@@ -271,8 +271,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/napomena-ikona.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-kljucni-pojmovi h3:first-of-type,
 .kutak.kutak-kljucni-pojmovi .widget-inner-title:first-of-type {
   color: #26a69a; }
@@ -284,8 +284,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/kljucni-pojmovi-ikona.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak[class^="kutak-pogled-u"] h3:first-of-type,
 .kutak[class^="kutak-pogled-u"] .widget-inner-title:first-of-type {
   color: #813d85; }
@@ -297,8 +297,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/bez-rijeci-ikona.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-pokus h3:first-of-type,
 .kutak.kutak-pokus .widget-inner-title:first-of-type {
   color: #4f56c9; }
@@ -310,8 +310,8 @@ h2 {
   background-image: url(/wp-content/themes/kresimira/img/pokus-ikona.svg); }
 
 /***
-   *
-   */
+ *
+ */
 .kutak.kutak-zanimljivost h3:first-of-type,
 .kutak.kutak-zanimljivost .widget-inner-title:first-of-type {
   color: #ad1457; }
@@ -438,10 +438,10 @@ h2 {
 
 .is__highlight {
   /*display: inline-block;
-	  background-color: #fff;
-	  padding: 5px 20px;
-	  border: 1px solid #8a8a8a;
-	  border-radius: 10px;*/
+	background-color: #fff;
+	padding: 5px 20px;
+	border: 1px solid #8a8a8a;
+	border-radius: 10px;*/
   display: -ms-inline-flexbox;
   display: inline-flex; }
   .is__highlight .highlight-inner {
