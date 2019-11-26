@@ -7,7 +7,7 @@ const {} = kutakProps;
 const {__} = wp.i18n;
 const {registerBlockType} = wp.blocks;
 const {MediaUpload, InspectorControls, BlockControls, AlignmentToolbar,} = wp.blockEditor;
-const {PanelBody, TextControl} = wp.components;
+const {PanelBody, TextControl, FormToggle} = wp.components;
 const {Fragment} = wp.element;
 
 registerBlockType('visual-editor/kutak-img', {
@@ -18,19 +18,26 @@ registerBlockType('visual-editor/kutak-img', {
 
 	edit: function (props) {
 		const {attributes, setAttributes} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlign} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlign, imgZoom} = attributes;
 
 		function selectImg(url) {
 			setAttributes({imgUrl: url.url,});
 		}
+
 		function changeImgWidth(width) {
 			setAttributes({imgWidth: width,});
 		}
+
 		function changeImgHeight(height) {
 			setAttributes({imgHeight: height,});
 		}
+
 		function setImgAlign(align) {
 			setAttributes({imgAlign: align,});
+		}
+
+		function imgZoomBtn() {
+			setAttributes({imgZoom: !imgZoom,});
 		}
 
 		return (
@@ -58,6 +65,12 @@ registerBlockType('visual-editor/kutak-img', {
 							onChange={setImgAlign}
 						/>
 					</PanelBody>
+					<PanelBody
+						title={__('Zoom')}
+						initialOpen={true}
+					>
+						<FormToggle checked={imgZoom} onChange={imgZoomBtn}/>
+					</PanelBody>
 				</InspectorControls>
 
 				<BlockControls>
@@ -67,13 +80,12 @@ registerBlockType('visual-editor/kutak-img', {
 					/>
 				</BlockControls>
 
-				<div>
+				<div className={`${imgZoom ? 'img-zoom' : ''}`}>
 					<MediaUpload
 						onSelect={selectImg}
 						render={({open}) => {
 							return (
 								<img
-									// className={`${imgAlign} align${imgAlign} ${kutakBlueCircle ? 'circle-image image-cc' : ''}`}
 									alt='kutna slika'
 									src={imgUrl}
 									width={imgWidth}
@@ -90,14 +102,25 @@ registerBlockType('visual-editor/kutak-img', {
 
 	save: function (props) {
 		const {attributes} = props;
-		const {imgUrl, imgWidth, imgHeight, imgAlign} = attributes;
+		const {imgUrl, imgWidth, imgHeight, imgAlign, imgZoom} = attributes;
+
+		function ImgModal() {
+			if (imgZoom) {
+				return (
+					<div id='img-modal' style='display: none;'>
+						<span className='close' id='img-modal-close'>x</span>
+						<img src={imgUrl} alt/>
+					</div>
+				)
+			}
+		}
 
 		return (
-			<div>
-				<div className={`${imgAlign} align${imgAlign}`}>
-					<img src={imgUrl} alt="Slika" width={imgWidth} height={imgHeight}/>
-				</div>
+			<div className={`${imgAlign} align${imgAlign} ${imgZoom ? 'img-zoom' : ''}`}>
+				<img src={imgUrl} width={imgWidth} height={imgHeight} alt/>
+				<ImgModal/>
 			</div>
+
 		);
 	}
 });

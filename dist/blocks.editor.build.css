@@ -469,6 +469,21 @@ h2 {
   margin: 10px auto;
   height: auto;
   text-align: center; }
+
+.img-zoom {
+  position: relative; }
+  .img-zoom::after {
+    position: absolute;
+    content: " ";
+    right: 0;
+    top: 0;
+    background-color: #9d27b0;
+    width: 40px;
+    height: 40px;
+    background-image: url(/wp-content/themes/kresimira/img/zoom.svg);
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat; }
 /**
  * #.# Common SCSS
  *

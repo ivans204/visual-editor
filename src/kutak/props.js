@@ -41,4 +41,7 @@ export default {
 	imgAlign: {
 		default: 'none',
 	},
+	imgZoom: {
+		default: false,
+	}
 }
